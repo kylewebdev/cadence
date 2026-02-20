@@ -1,0 +1,616 @@
+agency_id,canonical_name,detected_platform,detection_source
+alameda-county-sheriffs-office,Alameda County Sheriff's Office,unknown,
+albany-police-department,Albany Police Department,unknown,
+alhambra-police-department,Alhambra Police Department,civicplus,homepage_url:html=civicplus
+allan-hancock-community-college-district-police-department,Allan Hancock Community College District Police Department,unknown,
+alpine-county-district-attorney,Alpine County District Attorney,civicplus,homepage_url:html=civicplus
+alpine-county-sheriffs-department,Alpine County Sheriff's Department,civicplus,homepage_url:html=civicplus
+alturas-police-department,Alturas Police Department,unknown,
+amador-county-coroner,Amador County Coroner,rave,homepage_url:html=smart911
+amador-county-district-attorney,Amador County District Attorney,rave,feed_url:html=smart911
+american-river-college-police-department,American River College Police Department,unknown,
+amtrak-police-department,Amtrak Police Department,unknown,
+anaheim-police-department,Anaheim Police Department,civicplus,homepage_url:html=civicplus
+anderson-police-department,Anderson Police Department,unknown,
+angels-camp-police-department,Angels Camp Police Department,nixle,homepage_url:html=nixle
+apple-valley-unified-school-district-police-department,Apple Valley Unified School District Police Department,unknown,
+arcadia-police-department,Arcadia Police Department,unknown,
+arroyo-grande-police-department,Arroyo Grande Police Department,civicplus,homepage_url:html=civicplus
+atascadero-police-department,Atascadero Police Department,arcgis,homepage_url:html=arcgis
+atwater-police-department,Atwater Police Department,unknown,
+avenal-police-department,Avenal Police Department,civicplus,homepage_url:html=civicplus
+azusa-pacific-university-campus-safety-department,Azusa Pacific University Campus Safety Department,unknown,
+azusa-police-department,Azusa Police Department,civicplus,homepage_url:html=civicplus
+baldwin-park-police-department,Baldwin Park Police Department,civicplus,homepage_url:html=civicplus
+banning-police-department,Banning Police Department,civicplus,homepage_url:html=civicplus
+barstow-police-department,Barstow Police Department,unknown,
+bay-area-rapid-transit-police-department,Bay Area Rapid Transit Police Department,unknown,
+bear-valley-police-department,Bear Valley Police Department,nixle,homepage_url:html=nixle
+beaumont-police-department,Beaumont Police Department,civicplus,homepage_url:html=civicplus
+bell-gardens-police-department,Bell Gardens Police Department,unknown,
+bell-police-department,Bell Police Department,unknown,
+belvedere-police-department,Belvedere Police Department,unknown,
+benicia-police-department,Benicia Police Department,unknown,
+berkeley-police-department,Berkeley Police Department,nixle,homepage_url:html=Nixle
+beverly-hills-police-department,Beverly Hills Police Department,crimemapping,homepage_url:html=CrimeMapping
+big-bear-municipal-water-district-lake-patrol,Big Bear Municipal Water District Lake Patrol,unknown,
+biola-university-campus-safety-department,Biola University Campus Safety Department,rave,homepage_url:html=rave
+blue-lake-police-department,Blue Lake Police Department,unknown,
+blythe-police-department,Blythe Police Department,civicplus,homepage_url:html=civicplus
+brawley-police-department,Brawley Police Department,unknown,
+brea-police-department,Brea Police Department,civicplus,homepage_url:html=civicplus
+brisbane-police-department,Brisbane Police Department,unknown,
+broadmoor-police-department,Broadmoor Police Department,unknown,
+buena-park-police-department,Buena Park Police Department,unknown,
+burbank-glendale-pasadena-airport-authority-police-department,Burbank-Glendale-Pasadena Airport Authority Police Department,unknown,
+burbank-police-department,Burbank Police Department,nixle,homepage_url:html=nixle
+burlington-northern-santa-fe-railway-police-team,Burlington Northern Santa Fe Railway Police Team,unknown,
+butte-community-college-police-department,Butte Community College Police Department,unknown,
+butte-county-district-attorney,Butte County District Attorney,civicplus,homepage_url:html=civicplus
+ca-alcoholic-beverage-control,CA Alcoholic Beverage Control,unknown,
+ca-assembly-sergeant-at-arms,CA Assembly Sergeant at Arms,unknown,
+ca-california-exposition-and-state-fair-police-department,CA California Exposition and State Fair Police Department,unknown,
+ca-california-governors-office-of-emergency-services,CA California Governor's Office of Emergency Services,arcgis,homepage_url:html=arcgis
+ca-california-highway-patrol,CA California Highway Patrol,unknown,
+ca-california-horse-racing-board,CA California Horse Racing Board,unknown,
+ca-department-of-cannabis-control-law-enforcement-division,CA Department of Cannabis Control Law Enforcement Division,unknown,
+ca-department-of-consumer-affairs-dental-board,CA Department of Consumer Affairs Dental Board,unknown,
+ca-department-of-consumer-affairs-division-of-investigation,CA Department of Consumer Affairs Division of Investigation,rave,homepage_url:html=rave
+ca-department-of-corrections-and-rehabilitation,CA Department of Corrections and Rehabilitation,unknown,
+ca-department-of-developmental-services,CA Department of Developmental Services,unknown,
+ca-department-of-employment-development,CA Department of Employment Development,unknown,
+ca-department-of-financial-protection-and-innovation,CA Department of Financial Protection and Innovation,unknown,
+ca-department-of-forestry-and-fire-protection-cal-fire,CA Department of Forestry and Fire Protection (CAL FIRE),unknown,
+ca-department-of-health-care-services,CA Department of Health Care Services,unknown,
+ca-department-of-industrial-relations,CA Department of Industrial Relations,rave,homepage_url:html=rave
+ca-department-of-insurance-fraud-division,CA Department of Insurance Fraud Division,unknown,
+ca-department-of-justice,CA Department of Justice,unknown,
+ca-department-of-motor-vehicles,CA Department of Motor Vehicles,unknown,
+ca-department-of-parks-and-recreation,CA Department of Parks and Recreation,rave,homepage_url:html=rave
+ca-department-of-public-health-food-and-drug-branch,CA Department of Public Health Food and Drug Branch,unknown,
+ca-department-of-public-health-office-of-youth-tobacco-enforcement,CA Department of Public Health Office of Youth Tobacco Enforcement,unknown,
+ca-department-of-social-services,CA Department of Social Services,unknown,
+ca-department-of-state-hospitals,CA Department of State Hospitals,unknown,
+ca-department-of-toxic-substances-control,CA Department of Toxic Substances Control,unknown,
+ca-franchise-tax-board,CA Franchise Tax Board,unknown,
+calaveras-county-coroner,Calaveras County Coroner,arcgis,homepage_url:html=arcgis
+calaveras-county-district-attorney,Calaveras County District Attorney,arcgis,homepage_url:html=arcgis
+calexico-police-department,Calexico Police Department,unknown,
+california-city-police-department,California City Police Department,unknown,
+california-criminalistics-institute,California Criminalistics Institute,unknown,
+calipatria-police-department,Calipatria Police Department,unknown,
+calistoga-police-department,Calistoga Police Department,unknown,
+campbell-police-department,Campbell Police Department,civicplus,homepage_url:html=civicplus
+ca-national-guard,CA National Guard,arcgis,homepage_url:html=arcgis
+canyon-lake-police-department,Canyon Lake Police Department,unknown,
+ca-office-of-law-enforcement-support-oles,CA Office of Law Enforcement Support (OLES),unknown,
+capitola-police-department,Capitola Police Department,unknown,
+ca-public-employees-retirement-system-calpers,CA Public Employees Retirement System (CALPERS),unknown,
+carlsbad-police-department,Carlsbad Police Department,unknown,
+carmel-police-department,Carmel Police Department,unknown,
+ca-secretary-of-state,CA Secretary of State,unknown,
+ca-senate-sergeant-at-arms,CA Senate Sergeant-at-Arms,unknown,
+ca-state-controller,CA State Controller,unknown,
+ca-state-lottery,CA State Lottery,rave,homepage_url:html=rave
+ca-state-public-defender,CA State Public Defender,unknown,
+cathedral-city-police-department,Cathedral City Police Department,unknown,
+central-marin-police-authority,Central Marin Police Authority,civicplus,homepage_url:html=civicplus
+ceres-police-department,Ceres Police Department,civicplus,homepage_url:html=civicplus
+cerritos-college-police-department,Cerritos College Police Department,rave,homepage_url:html=rave
+chaffey-community-college-district-police-department,Chaffey Community College District Police Department,unknown,
+chapman-university-department-of-public-safety,Chapman University Department of Public Safety,unknown,
+chico-police-department,Chico Police Department,arcgis,homepage_url:html=arcgis
+chino-police-department,Chino Police Department,civicplus,homepage_url:html=civicplus
+chowchilla-police-department,Chowchilla Police Department,civicplus,homepage_url:html=civicplus
+chula-vista-police-department,Chula Vista Police Department,unknown,
+citrus-community-college-district-department-of-campus-safety,Citrus Community College District Department of Campus Safety,unknown,
+citrus-heights-police-department,Citrus Heights Police Department,civicplus,homepage_url:html=civicplus
+claremont-college-department-of-campus-safety,Claremont College Department of Campus Safety,unknown,
+claremont-police-department,Claremont Police Department,rave,homepage_url:html=smart911
+clayton-police-department,Clayton Police Department,nixle,homepage_url:html=nixle
+clearlake-police-department,Clearlake Police Department,citizenrims,homepage_url:html=CitizenRIMS
+cloverdale-police-department,Cloverdale Police Department,civicplus,homepage_url:html=civicplus
+clovis-police-department,Clovis Police Department,unknown,
+clovis-unified-school-district-police-department,Clovis Unified School District Police Department,unknown,
+coalinga-police-department,Coalinga Police Department,civicplus,homepage_url:html=civicplus
+college-of-the-redwoods,College of the Redwoods,unknown,
+college-of-the-sequoias-police-department,College of the Sequoias Police Department,unknown,
+colma-police-department,Colma Police Department,unknown,
+colton-police-department,Colton Police Department,crimemapping,homepage_url:html=crimemapping
+colusa-county-district-attorney,Colusa County District Attorney,civicplus,homepage_url:html=civicplus
+colusa-county-sheriffs-department,Colusa County Sheriff's Department,civicplus,homepage_url:html=civicplus
+colusa-police-department,Colusa Police Department,unknown,
+compton-community-college-police-department,Compton Community College Police Department,nixle,homepage_url:html=nixle
+compton-unified-school-district-police-department,Compton Unified School District Police Department,unknown,
+concordia-university-department-of-campus-safety-and-security,Concordia University Department of Campus Safety and Security,rave,homepage_url:html=rave
+concord-police-department,Concord Police Department,civicplus,homepage_url:html=civicplus
+contra-costa-community-college-district-police-department,Contra Costa Community College District Police Department,unknown,
+contra-costa-county-district-attorney,Contra Costa County District Attorney,civicplus,homepage_url:html=civicplus
+contra-costa-county-sheriffs-departmentcoroner,Contra Costa County Sheriff's Department/Coroner,unknown,
+corona-police-department,Corona Police Department,crimemapping,homepage_url:html=crimemapping
+costa-mesa-department-of-communications,Costa Mesa Department of Communications,unknown,
+costa-mesa-police-department,Costa Mesa Police Department,arcgis,feed_url:html=arcgis
+cosumnes-river-college-police-department,Cosumnes River College Police Department,unknown,
+cotati-police-department,Cotati Police Department,civicplus,homepage_url:html=civicplus
+covina-police-department,Covina Police Department,nixle,homepage_url:html=nixle
+cpsu-pomona-department-of-public-safety,CPSU Pomona Department of Public Safety,unknown,
+cpsu-san-luis-obispo-university-police-department,CPSU San Luis Obispo University Police Department,unknown,
+crescent-city-police-department,Crescent City Police Department,unknown,
+csu-bakersfield-university-police-department,CSU Bakersfield University Police Department,unknown,
+csu-dominguez-hills-university-police-department,CSU Dominguez Hills University Police Department,unknown,
+csu-east-bay-university-police-department,CSU East Bay University Police Department,unknown,
+csu-fresno-university-police-department,CSU Fresno University Police Department,unknown,
+csu-humboldt-university-police-department,CSU Humboldt University Police Department,unknown,
+csu-long-beach-university-police-department,CSU Long Beach University Police Department,unknown,
+csu-los-angeles-university-police-department,CSU Los Angeles University Police Department,unknown,
+csu-monterey-bay-university-police-department,CSU Monterey Bay University Police Department,unknown,
+csu-northridge-department-of-police-services,CSU Northridge Department of Police Services,unknown,
+csu-sacramento-public-safetyuniversity-police-department,CSU Sacramento Public Safety/University Police Department,unknown,
+csu-san-bernardino-university-police-department,CSU San Bernardino University Police Department,unknown,
+csu-san-diego-pd,CSU San Diego PD,unknown,
+csu-san-francisco-police-department,CSU San Francisco Police Department,unknown,
+csu-san-jose-university-police-department,CSU San Jose University Police Department,unknown,
+csu-san-marcos-university-police-department,CSU San Marcos University Police Department,unknown,
+csu-sonoma-police-and-parking-services,CSU Sonoma Police and Parking Services,unknown,
+csu-stanislaus-university-police-department,CSU Stanislaus University Police Department,unknown,
+cuesta-college-department-of-public-safety,Cuesta College Department of Public Safety,unknown,
+culver-city-police-department,Culver City Police Department,unknown,
+cypress-police-department,Cypress Police Department,unknown,
+daly-city-police-department,Daly City Police Department,civicplus,homepage_url:html=civicplus
+dana-point-police-department,Dana Point Police Department,unknown,
+danville-police-department,Danville Police Department,civicplus,homepage_url:html=civicplus
+davis-police-department,Davis Police Department,unknown,
+delano-police-department,Delano Police Department,civicplus,homepage_url:html=civicplus
+del-norte-county-district-attorney,Del Norte County District Attorney,unknown,
+del-rey-oaks-police-department,Del Rey Oaks Police Department,unknown,
+desert-hot-springs-police-department,Desert Hot Springs Police Department,unknown,
+dixon-police-department,Dixon Police Department,unknown,
+dos-palos-police-department,Dos Palos Police Department,unknown,
+downey-police-department,Downey Police Department,unknown,
+east-bay-regional-parks-district-department-of-public-safety,East Bay Regional Parks District Department of Public Safety,nixle,homepage_url:html=nixle
+east-palo-alto-police-department,East Palo Alto Police Department,unknown,
+el-cajon-police-department,El Cajon Police Department,unknown,
+el-camino-community-college-district-police-department,El Camino Community College District Police Department,unknown,
+el-cerrito-police-department,El Cerrito Police Department,civicplus,homepage_url:html=civicplus
+el-dorado-county-district-attorney,El Dorado County District Attorney,unknown,
+elk-grove-police-department,Elk Grove Police Department,unknown,
+el-monte-police-department,El Monte Police Department,civicplus,homepage_url:html=civicplus
+el-rancho-unified-school-district-police-department,El Rancho Unified School District Police Department,unknown,
+el-segundo-police-department,El Segundo Police Department,unknown,
+escalon-police-department,Escalon Police Department,nixle,homepage_url:html=nixle
+escondido-police-department,Escondido Police Department,civicplus,homepage_url:html=civicplus
+etna-police-department,Etna Police Department,unknown,
+eureka-police-department,Eureka Police Department,civicplus,homepage_url:html=civicplus
+exeter-police-department,Exeter Police Department,unknown,
+exposition-park-department-of-public-safety,Exposition Park Department of Public Safety,rave,homepage_url:html=rave
+fairfax-police-department,Fairfax Police Department,unknown,
+fairfield-police-department,Fairfield Police Department,unknown,
+farmersville-police-department,Farmersville Police Department,civicplus,homepage_url:html=civicplus
+ferndale-police-department,Ferndale Police Department,unknown,
+firebaugh-police-department,Firebaugh Police Department,unknown,
+folsom-lake-college-police-department,Folsom Lake College Police Department,unknown,
+folsom-police-department,Folsom Police Department,unknown,
+fontana-police-department,Fontana Police Department,crimemapping,homepage_url:html=crimemapping
+fontana-unified-school-district-police-department,Fontana Unified School District Police Department,unknown,
+foothillde-anza-community-college-district-police-department,Foothill/De Anza Community College District Police Department,unknown,
+fort-bragg-police-department,Fort Bragg Police Department,unknown,
+foster-city-police-department,Foster City Police Department,unknown,
+fountain-valley-police-department,Fountain Valley Police Department,civicplus,homepage_url:html=civicplus
+fowler-police-department,Fowler Police Department,unknown,
+fremont-police-department,Fremont Police Department,unknown,
+fresno-county-district-attorney,Fresno County District Attorney,unknown,
+fresno-county-sheriffs-department,Fresno County Sheriff's Department,unknown,
+fresno-police-department,Fresno Police Department,arcgis,homepage_url:html=arcgis
+fresno-yosemite-international-airport,Fresno Yosemite International Airport,unknown,
+fullerton-police-department,Fullerton Police Department,unknown,
+galt-police-department,Galt Police Department,unknown,
+gardena-police-department,Gardena Police Department,unknown,
+garden-grove-police-department,Garden Grove Police Department,unknown,
+gavilan-college-campus-security-department,Gavilan College Campus Security Department,unknown,
+gilroy-police-department,Gilroy Police Department,civicplus,homepage_url:html=civicplus
+glendale-community-college-district-police-department,Glendale Community College District Police Department,unknown,
+glendale-police-department,Glendale Police Department,unknown,
+glendale-police-department-park-rangers,Glendale Police Department Park Rangers,unknown,
+glendora-police-department,Glendora Police Department,unknown,
+glenn-county-district-attorney,Glenn County District Attorney,unknown,
+glenn-county-health-and-human-services-agency-special-investigations-unit,Glenn County Health and Human Services Agency Special Investigations Unit,unknown,
+glenn-county-sheriffs-departmentcoroner,Glenn County Sheriff's Department/Coroner,rave,homepage_url:html=smart911
+gonzales-police-department,Gonzales Police Department,unknown,
+grass-valley-police-department,Grass Valley Police Department,unknown,
+greenfield-police-department,Greenfield Police Department,civicplus,homepage_url:html=civicplus
+grover-beach-police-department,Grover Beach Police Department,civicplus,homepage_url:html=civicplus
+guadalupe-police-department,Guadalupe Police Department,unknown,
+hacienda-la-puente-school-district-police-and-safety-department,Hacienda-La Puente School District Police and Safety Department,unknown,
+hawthorne-police-department,Hawthorne Police Department,unknown,
+hayward-police-department,Hayward Police Department,nixle,homepage_url:html=nixle
+hemet-police-department,Hemet Police Department,unknown,
+hercules-police-department,Hercules Police Department,unknown,
+hermosa-beach-police-department,Hermosa Beach Police Department,unknown,
+hesperia-unified-school-district-police-department,Hesperia Unified School District Police Department,unknown,
+hollister-police-department,Hollister Police Department,nixle,homepage_url:html=nixle
+humboldt-county-district-attorney,Humboldt County District Attorney,civicplus,homepage_url:html=civicplus
+humboldt-department-of-health-and-human-services,Humboldt Department of Health and Human Services,civicplus,homepage_url:html=civicplus
+huntington-beach-police-department,Huntington Beach Police Department,unknown,
+huntington-park-police-department,Huntington Park Police Department,unknown,
+huron-police-department,Huron Police Department,unknown,
+imperial-county-district-attorney,Imperial County District Attorney,unknown,
+imperial-county-sheriffs-department,Imperial County Sheriff's Department,unknown,
+imperial-police-department,Imperial Police Department,unknown,
+indio-police-department,Indio Police Department,unknown,
+inglewood-police-department,Inglewood Police Department,civicplus,homepage_url:html=civicplus
+inyo-county-district-attorney,Inyo County District Attorney,citizenrims,homepage_url:html=citizen-rims
+ione-police-department,Ione Police Department,unknown,
+irvine-police-department,Irvine Police Department,unknown,
+irvine-valley-community-college-district-police-department,Irvine Valley Community College District Police Department,unknown,
+irwindale-police-department,Irwindale Police Department,civicplus,homepage_url:html=civicplus
+jackson-police-department,Jackson Police Department,unknown,
+kensington-police-department,Kensington Police Department,unknown,
+kerman-police-department,Kerman Police Department,civicplus,homepage_url:html=civicplus
+kern-county-district-attorney,Kern County District Attorney,unknown,
+kern-county-district-of-parks-and-recreation-police-department,Kern County District of Parks and Recreation Police Department,unknown,
+kern-county-sheriffs-department,Kern County Sheriff's Department,nixle,homepage_url:html=nixle
+kern-high-school-district-police-department,Kern High School District Police Department,arcgis,homepage_url:html=arcgis
+king-city-police-department,King City Police Department,civicplus,homepage_url:html=civicplus
+kingsburg-police-department,Kingsburg Police Department,civicplus,homepage_url:html=civicplus
+kings-county-district-attorney,Kings County District Attorney,unknown,
+kings-county-human-services-agency-fraud-bureau,Kings County Human Services Agency Fraud Bureau,unknown,
+kings-county-sheriffs-department,Kings County Sheriff's Department,unknown,
+lafayette-police-department,Lafayette Police Department,unknown,
+laguna-beach-police-department,Laguna Beach Police Department,unknown,
+la-habra-police-department,La Habra Police Department,civicplus,homepage_url:html=civicplus
+la-impact,L.A. Impact,unknown,
+lake-county-district-attorney,Lake County District Attorney,civicplus,homepage_url:html=civicplus
+lake-county-sheriffs-department,Lake County Sheriff's Department,civicplus,homepage_url:html=civicplus
+lakeport-police-department,Lakeport Police Department,nixle,homepage_url:html=nixle
+lake-shastina-district-police-department,Lake Shastina District Police Department,unknown,
+la-mesa-police-department,La Mesa Police Department,civicplus,homepage_url:html=civicplus
+la-metro-department-of-public-safety,L.A. Metro Department of Public Safety,unknown,
+lancaster-police-department,Lancaster Police Department,unknown,
+la-palma-police-department,La Palma Police Department,civicplus,homepage_url:html=civicplus
+lassen-county-district-attorney,Lassen County District Attorney,unknown,
+lathrop-police-department,Lathrop Police Department,unknown,
+la-verne-police-department,La Verne Police Department,nixle,homepage_url:html=nixle
+lemoore-police-department,Lemoore Police Department,unknown,
+lindsay-department-of-public-safety,Lindsay Department of Public Safety,unknown,
+livermore-police-department,Livermore Police Department,unknown,
+livingston-police-department,Livingston Police Department,unknown,
+lodi-police-department,Lodi Police Department,civicplus,homepage_url:html=civicplus
+lompoc-police-department,Lompoc Police Department,unknown,
+long-beach-department-of-disaster-preparedness-and-emergency-communications,Long Beach Department of Disaster Preparedness and Emergency Communications,rave,homepage_url:html=rave
+long-beach-police-department,Long Beach Police Department,rave,homepage_url:html=rave
+long-beach-unified-school-district-safety-department,Long Beach Unified School District Safety Department,unknown,
+los-alamitos-police-department,Los Alamitos Police Department,civicplus,homepage_url:html=civicplus
+los-altos-police-department,Los Altos Police Department,civicplus,homepage_url:html=civicplus
+los-angeles-city-department-of-recreation-and-parks-park-ranger-division,Los Angeles City Department of Recreation and Parks Park Ranger Division,unknown,
+los-angeles-county-department-of-medical-examiner,Los Angeles County Department of Medical Examiner,rave,homepage_url:html=rave
+los-angeles-county-district-attorney,Los Angeles County District Attorney,unknown,
+los-angeles-county-probation-department,Los Angeles County Probation Department,rave,homepage_url:html=rave
+los-angeles-county-sheriffs-department,Los Angeles County Sheriff's Department,crimemapping,feed_url:html=CrimeMapping
+los-angeles-police-department,Los Angeles Police Department,unknown,
+los-angeles-port-police-department,Los Angeles Port Police Department,crimemapping,homepage_url:html=crimemapping
+los-angeles-public-works-department-investigation-and-enforcement-division,Los Angeles Public Works Department Investigation and Enforcement Division,unknown,
+los-angeles-school-police-department,Los Angeles School Police Department,unknown,
+los-angeles-watershed-protection-enforcement-unit,Los Angeles Watershed Protection Enforcement Unit,unknown,
+los-angeles-world-airports-police-department,Los Angeles World Airports Police Department,rave,homepage_url:html=rave
+los-banos-police-department,Los Banos Police Department,rave,homepage_url:html=rave
+los-gatosmonte-sereno-police-department,Los Gatos/Monte Sereno Police Department,civicplus,homepage_url:html=civicplus
+loyola-marymount-university-office-of-public-safety,Loyola Marymount University Office of Public Safety,unknown,
+madera-county-district-attorney,Madera County District Attorney,unknown,
+madera-county-sheriffs-department,Madera County Sheriff's Department,unknown,
+madera-police-department,Madera Police Department,unknown,
+mammoth-lakes-police-department,Mammoth Lakes Police Department,civicplus,homepage_url:html=civicplus
+manhattan-beach-police-department,Manhattan Beach Police Department,unknown,
+marina-department-of-public-safety,Marina Department of Public Safety,civicplus,homepage_url:html=civicplus
+marin-community-college-district-police-department,Marin Community College District Police Department,unknown,
+marin-county-coroner,Marin County Coroner,unknown,
+marin-county-district-attorney,Marin County District Attorney,unknown,
+marin-county-health-human-services,Marin County Health & Human Services,unknown,
+marin-municipal-water-district,Marin Municipal Water District,unknown,
+mariposa-county-district-attorney,Mariposa County District Attorney,civicplus,homepage_url:html=civicplus
+mariposa-county-sheriffs-department,Mariposa County Sheriff's Department,civicplus,homepage_url:html=civicplus
+marysville-police-department,Marysville Police Department,unknown,
+mcfarland-police-department,McFarland Police Department,civicplus,homepage_url:html=civicplus
+mendocino-county-district-attorney,Mendocino County District Attorney,unknown,
+mendocino-county-sheriffs-department,Mendocino County Sheriff's Department,nixle,homepage_url:html=nixle
+mendota-police-department,Mendota Police Department,unknown,
+menifee-police-department,Menifee Police Department,arcgis,homepage_url:html=arcgis
+merced-community-college-police-department,Merced Community College Police Department,unknown,
+merced-county-district-attorney,Merced County District Attorney,civicplus,homepage_url:html=civicplus
+merced-county-sheriffs-department,Merced County Sheriff's Department,civicplus,homepage_url:html=civicplus
+merced-police-department,Merced Police Department,unknown,
+mill-valley-police-department,Mill Valley Police Department,civicplus,homepage_url:html=civicplus
+milpitas-police-department,Milpitas Police Department,civicplus,homepage_url:html=civicplus
+mira-costa-community-college-district-police-department,Mira Costa Community College District Police Department,unknown,
+modesto-police-department,Modesto Police Department,civicplus,homepage_url:html=civicplus
+modoc-county-sheriffs-department,Modoc County Sheriff's Department,unknown,
+mono-county-district-attorney,Mono County District Attorney,unknown,
+monrovia-police-department,Monrovia Police Department,unknown,
+montclair-police-department,Montclair Police Department,unknown,
+montebello-police-department,Montebello Police Department,socrata,homepage_url:html=socrata
+montebello-unified-school-district-police-department,Montebello Unified School District Police Department,unknown,
+monterey-county-district-attorney,Monterey County District Attorney,unknown,
+monterey-county-emergency-communication,Monterey County Emergency Communication,unknown,
+monterey-county-sheriffs-department,Monterey County Sheriff's Department,rave,homepage_url:html=rave
+monterey-peninsula-airport-district-police-department,Monterey Peninsula Airport District Police Department,unknown,
+monterey-police-department,Monterey Police Department,unknown,
+moorpark-college-police-department,Moorpark College Police Department,unknown,
+moraga-police-department,Moraga Police Department,civicplus,homepage_url:html=civicplus
+morgan-hill-police-department,Morgan Hill Police Department,civicplus,homepage_url:html=civicplus
+morro-bay-police-department,Morro Bay Police Department,civicplus,homepage_url:html=civicplus
+mountains-recreation-and-conservation-authority-ranger-division,Mountains Recreation and Conservation Authority Ranger Division,unknown,
+mt-san-antonio-community-college-district-police-department,Mt. San Antonio Community College District Police Department,unknown,
+mt-shasta-police-department,Mt. Shasta Police Department,unknown,
+murrieta-police-department,Murrieta Police Department,crimemapping,homepage_url:html=crimemapping
+napa-county-district-attorney,Napa County District Attorney,civicplus,homepage_url:html=civicplus
+napa-county-sheriffs-department,Napa County Sheriff's Department,civicplus,homepage_url:html=civicplus
+napa-police-department,Napa Police Department,civicplus,homepage_url:html=civicplus
+napa-valley-college-police-department,Napa Valley College Police Department,unknown,
+national-city-police-department,National City Police Department,unknown,
+nevada-city-police-department,Nevada City Police Department,civicplus,homepage_url:html=civicplus
+nevada-county-district-attorney,Nevada County District Attorney,civicplus,homepage_url:html=civicplus
+nevada-county-sheriffs-department,Nevada County Sheriff's Department,civicplus,homepage_url:html=civicplus
+newman-police-department,Newman Police Department,unknown,
+newport-beach-police-department,Newport Beach Police Department,arcgis,feed_url:html=arcgis
+novato-police-department,Novato Police Department,unknown,
+oakdale-police-department,Oakdale Police Department,unknown,
+oakland-city-housing-authority-police-department,Oakland City Housing Authority Police Department,unknown,
+oakland-police-department,Oakland Police Department,unknown,
+oakley-police-department,Oakley Police Department,unknown,
+occidental-college-department-of-campus-safety,Occidental College Department of Campus Safety,unknown,
+oceanside-police-department,Oceanside Police Department,unknown,
+oceanside-police-department-harbor-unit,Oceanside Police Department Harbor Unit,unknown,
+ohlone-community-college-district-police-department,Ohlone Community College District Police Department,unknown,
+ontario-police-department,Ontario Police Department,unknown,
+orange-county-auto-theft-task-force-ocatt,Orange County Auto Theft Task Force (OCATT),unknown,
+orange-county-district-attorney,Orange County District Attorney,unknown,
+orange-county-district-attorney-public-assistance-fraud,Orange County District Attorney Public Assistance Fraud,unknown,
+orange-county-probation-department,Orange County Probation Department,unknown,
+orange-county-sheriffs-departmentcoroner,Orange County Sheriff's Department/Coroner,crimemapping,homepage_url:html=CrimeMapping
+orange-cove-police-department,Orange Cove Police Department,unknown,
+orange-police-department,Orange Police Department,unknown,
+orinda-police-department,Orinda Police Department,civicplus,homepage_url:html=civicplus
+orland-police-department,Orland Police Department,unknown,
+oxnard-police-department,Oxnard Police Department,unknown,
+pacific-grove-police-department,Pacific Grove Police Department,arcgis,homepage_url:html=arcgis
+pacific-union-college-department-of-public-safety,Pacific Union College Department of Public Safety,unknown,
+palm-springs-police-department,Palm Springs Police Department,unknown,
+palo-alto-police-department,Palo Alto Police Department,nixle,homepage_url:html=nixle
+palomar-community-college-district-police-department,Palomar Community College District Police Department,unknown,
+palos-verdes-estates-police-department,Palos Verdes Estates Police Department,unknown,
+paradise-police-department,Paradise Police Department,unknown,
+parlier-police-department,Parlier Police Department,unknown,
+pasadena-city-college-district-police-department,Pasadena City College District Police Department,unknown,
+pasadena-police-department,Pasadena Police Department,nixle,homepage_url:html=nixle
+paso-robles-police-department,Paso Robles Police Department,civicplus,homepage_url:html=civicplus
+pepperdine-university-office-of-public-safety,Pepperdine University Office of Public Safety,unknown,
+petaluma-police-department,Petaluma Police Department,unknown,
+piedmont-police-department,Piedmont Police Department,unknown,
+pittsburg-police-department,Pittsburg Police Department,unknown,
+placentia-police-department,Placentia Police Department,civicplus,homepage_url:html=civicplus
+placentia-public-safety-communications,Placentia Public Safety Communications,unknown,
+placer-county-district-attorney,Placer County District Attorney,civicplus,homepage_url:html=civicplus
+placer-county-probation-department,Placer County Probation Department,unknown,
+placer-county-sheriffs-department,Placer County Sheriff's Department,civicplus,homepage_url:html=civicplus
+plumas-county-district-attorney,Plumas County District Attorney,civicplus,homepage_url:html=civicplus
+plumas-county-sheriffs-department,Plumas County Sheriff's Department,civicplus,homepage_url:html=civicplus
+pomona-police-department,Pomona Police Department,unknown,
+pomona-unified-school-district-security-department,Pomona Unified School District Security Department,unknown,
+porterville-police-department,Porterville Police Department,unknown,
+port-hueneme-police-department,Port Hueneme Police Department,civicplus,homepage_url:html=civicplus
+port-san-luis-harbor-district-harbor-patrol-department,Port San Luis Harbor District Harbor Patrol Department,unknown,
+presidio-of-monterey-police-department,Presidio of Monterey Police Department,unknown,
+redding-police-department,Redding Police Department,unknown,
+redlands-police-department,Redlands Police Department,unknown,
+redondo-beach-police-department,Redondo Beach Police Department,arcgis,homepage_url:html=arcgis
+redwood-city-police-department,Redwood City Police Department,unknown,
+reedley-police-department,Reedley Police Department,unknown,
+rialto-police-department,Rialto Police Department,crimemapping,homepage_url:html=crimemapping
+richmond-police-department,Richmond Police Department,civicplus,homepage_url:html=civicplus
+ridgecrest-police-department,Ridgecrest Police Department,civicplus,homepage_url:html=civicplus
+rio-dell-police-department,Rio Dell Police Department,civicplus,homepage_url:html=civicplus
+rio-hondo-college-pd,Rio Hondo College PD,unknown,
+riverside-community-college-district-police-department,Riverside Community College District Police Department,unknown,
+riverside-county-department-of-public-social-services,Riverside County Department of Public Social Services,unknown,
+riverside-county-district-attorney,Riverside County District Attorney,unknown,
+riverside-county-sheriffs-office,Riverside County Sheriff's Office,civicplus,homepage_url:html=civicplus
+riverside-police-department,Riverside Police Department,arcgis,feed_url:html=arcgis
+rohnert-park-department-of-public-safety,Rohnert Park Department of Public Safety,civicplus,homepage_url:html=civicplus
+roseville-police-department,Roseville Police Department,arcgis,homepage_url:html=arcgis
+ross-police-department,Ross Police Department,unknown,
+sacramento-city-college-police-department,Sacramento City College Police Department,unknown,
+sacramento-county-coroner,Sacramento County Coroner,unknown,
+sacramento-county-department-of-human-assistance,Sacramento County Department of Human Assistance,unknown,
+sacramento-county-district-attorney,Sacramento County District Attorney,unknown,
+sacramento-county-regional-parks-department,Sacramento County Regional Parks Department,unknown,
+sacramento-county-sheriffs-department,Sacramento County Sheriff's Department,unknown,
+sacramento-regional-transit-district-police-services,Sacramento Regional Transit District Police Services,unknown,
+saddleback-community-college-police-department,Saddleback Community College Police Department,unknown,
+saint-helena-police-department,Saint Helena Police Department,unknown,
+salinas-police-department,Salinas Police Department,unknown,
+san-benito-county-district-attorney,San Benito County District Attorney,unknown,
+san-benito-county-sheriffs-department,San Benito County Sheriff's Department,unknown,
+san-benito-office-of-emergency-services,San Benito Office of Emergency Services,unknown,
+san-bernardino-community-college-district-police-department,San Bernardino Community College District Police Department,unknown,
+san-bernardino-county-district-attorney,San Bernardino County District Attorney,unknown,
+san-bernardino-county-human-services,San Bernardino County Human Services,unknown,
+san-bernardino-county-sheriff-coroner,San Bernardino County Sheriff-Coroner,rave,homepage_url:html=smart911
+san-bernardino-police-department,San Bernardino Police Department,civicplus,homepage_url:html=civicplus
+san-bernardino-unified-school-district-police-department,San Bernardino Unified School District Police Department,unknown,
+san-carlos-police-department,San Carlos Police Department,unknown,
+sand-city-police-department,Sand City Police Department,unknown,
+san-diego-community-college-district-police-department,San Diego Community College District Police Department,unknown,
+san-diego-county-bureau-of-public-assistance-investigations,San Diego County Bureau of Public Assistance Investigations,unknown,
+san-diego-county-district-attorney,San Diego County District Attorney,unknown,
+san-diego-county-law-enforcement-training-managers-association,San Diego County Law Enforcement Training Manager's Association,unknown,
+san-diego-county-medical-examiner,San Diego County Medical Examiner,unknown,
+san-diego-county-probation-department,San Diego County Probation Department,unknown,
+san-diego-county-sheriffs-department,San Diego County Sheriff's Department,nixle,feed_url:html=nixle
+san-diego-harbor-police-department-port-of,San Diego Harbor Police Department Port Of,unknown,
+san-diego-police-department,San Diego Police Department,arcgis,homepage_url:html=arcgis
+san-diego-unified-school-district-police-department,San Diego Unified School District Police Department,unknown,
+san-fernando-police-department,San Fernando Police Department,unknown,
+san-francisco-community-college-district-police-department,San Francisco Community College District Police Department,unknown,
+san-francisco-county-department-of-emergency-management,San Francisco County Department of Emergency Management,unknown,
+san-francisco-county-district-attorney,San Francisco County District Attorney,unknown,
+san-francisco-county-medical-examiner,San Francisco County Medical Examiner,unknown,
+san-francisco-county-sheriffs-department,San Francisco County Sheriff's Department,rave,homepage_url:html=rave
+san-francisco-international-airport-communications,San Francisco International Airport Communications,unknown,
+san-francisco-police-department,San Francisco Police Department,unknown,
+sanger-police-department,Sanger Police Department,unknown,
+san-jacinto-police-department,San Jacinto Police Department,unknown,
+san-joaquin-county-district-attorney,San Joaquin County District Attorney,unknown,
+san-joaquin-county-probation-department,San Joaquin County Probation Department,unknown,
+san-joaquin-county-sheriffs-department,San Joaquin County Sheriff's Department,unknown,
+san-joaquin-delta-college-police-department,San Joaquin Delta College Police Department,unknown,
+san-joseevergreen-community-college-district-police-department,San Jose/Evergreen Community College District Police Department,unknown,
+san-jose-police-department,San Jose Police Department,unknown,
+san-jose-unified-school-district-police-department,San Jose Unified School District Police Department,unknown,
+san-leandro-police-department,San Leandro Police Department,unknown,
+san-luis-obispo-county-district-attorney,San Luis Obispo County District Attorney,unknown,
+san-luis-obispo-county-sheriffs-department,San Luis Obispo County Sheriff's Department,unknown,
+san-luis-obispo-police-department,San Luis Obispo Police Department,unknown,
+san-marino-police-department,San Marino Police Department,unknown,
+san-mateo-county-coroner,San Mateo County Coroner,unknown,
+san-mateo-county-district-attorney,San Mateo County District Attorney,unknown,
+san-mateo-county-public-safety-communications-center,San Mateo County Public Safety Communications Center,unknown,
+san-mateo-county-sheriffs-office,San Mateo County Sheriff's Office,unknown,
+san-pablo-police-department,San Pablo Police Department,unknown,
+san-rafael-police-department,San Rafael Police Department,nixle,homepage_url:html=nixle
+san-ramon-police-department,San Ramon Police Department,unknown,
+santa-ana-police-department,Santa Ana Police Department,rave,homepage_url:html=rave
+santa-ana-unified-school-district-police-department,Santa Ana Unified School District Police Department,unknown,
+santa-barbara-airport-police-department,Santa Barbara Airport Police Department,unknown,
+santa-barbara-county-district-attorney,Santa Barbara County District Attorney,unknown,
+santa-barbara-county-sheriffs-department,Santa Barbara County Sheriff's Department,unknown,
+santa-barbara-police-department,Santa Barbara Police Department,arcgis,homepage_url:html=arcgis
+santa-clara-county-communications,Santa Clara County Communications,unknown,
+santa-clara-county-district-attorney,Santa Clara County District Attorney,unknown,
+santa-clara-county-district-attorney-public-assistance-fraud-unit,Santa Clara County District Attorney Public Assistance Fraud Unit,unknown,
+santa-clara-county-sheriffs-department,Santa Clara County Sheriff's Department,unknown,
+santa-clara-university-department-of-campus-safety,Santa Clara University Department of Campus Safety,unknown,
+santa-cruz-county-district-attorney,Santa Cruz County District Attorney,unknown,
+santa-cruz-county-sheriffs-department,Santa Cruz County Sheriff's Department,unknown,
+santa-cruz-police-department,Santa Cruz Police Department,unknown,
+santa-fe-springs-police-services,Santa Fe Springs Police Services,unknown,
+santa-maria-police-department,Santa Maria Police Department,unknown,
+santa-monica-community-college-district-police-department,Santa Monica Community College District Police Department,unknown,
+santa-monica-office-of-emergency-management,Santa Monica Office of Emergency Management,unknown,
+santa-monica-police-department,Santa Monica Police Department,arcgis,homepage_url:html=arcgis
+santa-paula-police-department,Santa Paula Police Department,unknown,
+santa-rosa-junior-college-police-department,Santa Rosa Junior College Police Department,unknown,
+santa-rosa-police-department,Santa Rosa Police Department,civicplus,homepage_url:html=civicplus
+sausalito-police-department,Sausalito Police Department,unknown,
+seal-beach-police-department,Seal Beach Police Department,unknown,
+seaside-police-department,Seaside Police Department,civicplus,homepage_url:html=civicplus
+selma-police-department,Selma Police Department,rave,homepage_url:html=rave
+shasta-area-safety-communications-agency-shascom-911,Shasta Area Safety Communications Agency (SHASCOM-911),unknown,
+shasta-county-district-attorney,Shasta County District Attorney,unknown,
+shasta-county-marshal,Shasta County Marshal,unknown,
+shasta-county-sheriffs-department,Shasta County Sheriff's Department,unknown,
+sierra-college-police-department,Sierra College Police Department,unknown,
+sierra-county-district-attorney,Sierra County District Attorney,unknown,
+sierra-county-sheriffs-office,Sierra County Sheriff's Office,civicplus,homepage_url:html=civicplus
+sierra-madre-police-department,Sierra Madre Police Department,unknown,
+signal-hill-police-department,Signal Hill Police Department,unknown,
+simi-valley-police-department,Simi Valley Police Department,unknown,
+siskiyou-county-district-attorney,Siskiyou County District Attorney,unknown,
+snowline-joint-unified-school-district-police-department,Snowline Joint Unified School District Police Department,unknown,
+solano-community-college-district-department-of-public-safety,Solano Community College District Department of Public Safety,unknown,
+solano-county-district-attorney,Solano County District Attorney,unknown,
+solano-county-sheriffs-department,Solano County Sheriff's Department,unknown,
+solano-county-special-investigation-bureau,Solano County Special Investigation Bureau,unknown,
+soledad-police-department,Soledad Police Department,unknown,
+sonoma-county-district-attorney,Sonoma County District Attorney,unknown,
+sonoma-county-human-services-department,Sonoma County Human Services Department,unknown,
+sonoma-county-probation-department,Sonoma County Probation Department,unknown,
+sonoma-county-sheriffs-office,Sonoma County Sheriff's Office,nixle,homepage_url:html=nixle
+sonoma-marin-area-rail-transit-smart,Sonoma-Marin Area Rail Transit (SMART),unknown,
+sonoma-police-department,Sonoma Police Department,unknown,
+sonora-police-department,Sonora Police Department,unknown,
+south-bay-regional-public-communications-authority,South Bay Regional Public Communications Authority,unknown,
+south-gate-police-department,South Gate Police Department,unknown,
+south-pasadena-police-department,South Pasadena Police Department,nixle,homepage_url:html=nixle
+southwestern-community-college-police-department,Southwestern Community College Police Department,unknown,
+stallion-springs-police-department,Stallion Springs Police Department,unknown,
+stanford-university-department-of-public-safety,Stanford University Department of Public Safety,unknown,
+stanislaus-county-district-attorney,Stanislaus County District Attorney,unknown,
+stanislaus-county-sheriffs-department,Stanislaus County Sheriff's Department,unknown,
+stanislaus-regional-9-1-1,Stanislaus Regional 9-1-1,unknown,
+state-center-community-college-district-police-department,State Center Community College District Police Department,unknown,
+stockton-police-department,Stockton Police Department,arcgis,homepage_url:html=arcgis
+stockton-port-district-police-department,Stockton Port District Police Department,unknown,
+stockton-unified-school-district-police-department,Stockton Unified School District Police Department,unknown,
+sunnyvale-department-of-public-safety,Sunnyvale Department of Public Safety,unknown,
+sutter-county-district-attorney,Sutter County District Attorney,unknown,
+sutter-county-health-and-human-services,Sutter County Health and Human Services,unknown,
+sutter-county-sheriffs-department,Sutter County Sheriff's Department,crimemapping,homepage_url:html=crimemapping
+sutter-creek-police-department,Sutter Creek Police Department,unknown,
+tehachapi-police-department,Tehachapi Police Department,civicplus,homepage_url:html=civicplus
+tehama-county-district-attorney,Tehama County District Attorney,arcgis,homepage_url:html=arcgis
+temecula-police-department,Temecula Police Department,civicplus,homepage_url:html=civicplus
+tiburon-police-department,Tiburon Police Department,civicplus,homepage_url:html=civicplus
+torrance-police-department,Torrance Police Department,unknown,
+tracy-police-department,Tracy Police Department,rave,homepage_url:html=rave
+trinidad-police-department,Trinidad Police Department,unknown,
+trinity-county-district-attorney,Trinity County District Attorney,civicplus,homepage_url:html=civicplus
+trinity-county-marshal,Trinity County Marshal,unknown,
+trinity-county-sheriffs-department,Trinity County Sheriff's Department,civicplus,homepage_url:html=civicplus
+truckee-police-department,Truckee Police Department,unknown,
+tulare-county-district-attorney,Tulare County District Attorney,unknown,
+tulare-county-probation-department,Tulare County Probation Department,unknown,
+tulare-county-sheriffs-department,Tulare County Sheriff's Department,unknown,
+tulare-police-department,Tulare Police Department,unknown,
+tulelake-police-department,Tulelake Police Department,unknown,
+tuolumne-county-district-attorney,Tuolumne County District Attorney,civicplus,homepage_url:html=civicplus
+turlock-police-department,Turlock Police Department,unknown,
+tustin-police-department,Tustin Police Department,civicplus,homepage_url:html=civicplus
+twin-rivers-unified-school-district-police-services,Twin Rivers Unified School District Police Services,unknown,
+uc-berkeley-police-department,UC Berkeley Police Department,unknown,
+uc-davis-police-department,UC Davis Police Department,unknown,
+uc-los-angeles-police-department,UC Los Angeles Police Department,unknown,
+uc-merced-police-department,UC Merced Police Department,unknown,
+uc-santa-barbara-police-department,UC Santa Barbara Police Department,unknown,
+ukiah-police-department,Ukiah Police Department,unknown,
+union-city-police-department,Union City Police Department,civicplus,homepage_url:html=civicplus
+union-pacific-railroad-police,Union Pacific Railroad Police,unknown,
+university-of-la-verne-campus-safety-department,University of La Verne Campus Safety Department,unknown,
+university-of-san-diego-public-safety-department,University of San Diego Public Safety Department,unknown,
+university-of-san-francisco-public-safety-department,University of San Francisco Public Safety Department,unknown,
+university-of-southern-california-department-of-public-safety,University of Southern California Department of Public Safety,rave,homepage_url:html=rave
+upland-police-department,Upland Police Department,crimemapping,homepage_url:html=crimemapping
+us-attorneys-office-central-district-of-california,U.S. Attorney's Office Central District of California,unknown,
+vallejo-police-department,Vallejo Police Department,unknown,
+val-verde-unified-school-district-police-department,Val Verde Unified School District Police Department,unknown,
+ventura-county-community-college-district-police-department,Ventura County Community College District Police Department,unknown,
+ventura-county-district-attorney,Ventura County District Attorney,unknown,
+ventura-county-medical-examiner,Ventura County Medical Examiner,unknown,
+ventura-county-sheriffs-department,Ventura County Sheriff's Department,nixle,homepage_url:html=nixle
+ventura-harbor-patrol,Ventura Harbor Patrol,unknown,
+vernon-police-department,Vernon Police Department,unknown,
+victor-valley-college-police-department,Victor Valley College Police Department,unknown,
+victor-valley-union-high-school-district-police-department,Victor Valley Union High School District Police Department,unknown,
+visalia-police-department,Visalia Police Department,unknown,
+walnut-creek-police-department,Walnut Creek Police Department,unknown,
+watsonville-police-department,Watsonville Police Department,civicplus,homepage_url:html=civicplus
+weed-police-department,Weed Police Department,unknown,
+west-cities-police-communications-center,West Cities Police Communications Center,unknown,
+west-covina-police-department,West Covina Police Department,unknown,
+westminster-police-department,Westminster Police Department,unknown,
+westmorland-police-department,Westmorland Police Department,unknown,
+west-sacramento-police-department,West Sacramento Police Department,unknown,
+west-valley-mission-community-college-district-police-department,West Valley-Mission Community College District Police Department,unknown,
+wheatland-police-department,Wheatland Police Department,unknown,
+whittier-college-department-of-campus-safety,Whittier College Department of Campus Safety,unknown,
+whittier-police-department,Whittier Police Department,unknown,
+williams-police-department,Williams Police Department,unknown,
+willits-police-department,Willits Police Department,civicplus,homepage_url:html=civicplus
+windsor-police-department,Windsor Police Department,civicplus,homepage_url:html=civicplus
+winters-police-department,Winters Police Department,civicplus,homepage_url:html=civicplus
+woodlake-police-department,Woodlake Police Department,unknown,
+woodland-police-department,Woodland Police Department,civicplus,homepage_url:html=civicplus
+yolo-county-district-attorney,Yolo County District Attorney,unknown,
+yolo-county-health-human-services,Yolo County Health Human Services,unknown,
+yolo-county-sheriffs-department,Yolo County Sheriff's Department,nixle,homepage_url:html=nixle
+yolo-emergency-communications-agency,Yolo Emergency Communications Agency,unknown,
+yuba-city-police-department,Yuba City Police Department,arcgis,homepage_url:html=arcgis
+yuba-county-district-attorney,Yuba County District Attorney,unknown,

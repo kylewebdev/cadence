@@ -50,11 +50,56 @@ Next.js + Tailwind + shadcn/ui. Features: semantic search with metadata filters,
 
 ## MVP Build Sequence
 
-1. Registry setup — load CSV into Postgres, validate schema
+1. ~~Registry setup — load CSV into Postgres, validate schema~~ ✅ **COMPLETE**
 2. RSS/platform parsers — CivicPlus, CrimeMapping, Nixle first (highest agency coverage)
 3. Embedding pipeline — normalize → embed → upsert to Qdrant with full metadata
 4. FOIA queue — flag eligible docs, render CPRA templates
 5. Frontend — search UI, filters, FOIA badge, trend dashboard
+
+## Phase Status
+
+| Phase | Description | Status |
+|---|---|---|
+| 1 | Source Registry | ✅ Complete |
+| 2 | Ingestion Pipeline | 🔄 In Progress |
+| 3 | Document Processing + Embeddings | ⬜ Not started |
+| 4 | FOIA Pipeline | ⬜ Not started |
+| 5 | Frontend | ⬜ Not started |
+
+### Phase 1 Complete — Source Registry
+
+- 697 agencies loaded into Postgres with `agency_id` slug, `agency_type`, `county`, `region`
+- `platform_type` populated for ~268 agencies via `import_csv.py` + `enrich_platforms.py`
+- Feed records created for all agencies with Activity Data URLs
+- FastAPI CRUD + filter + stats endpoints working (`/api/registry/stats`)
+- Region classification run (`classify_regions.py`); 206/697 agencies have region
+- Scripts: `scripts/import_csv.py`, `scripts/enrich_platforms.py`, `scripts/classify_regions.py`, `scripts/phase1_status.py`
+
+### Phase 2 — Ingestion Pipeline
+
+**Goal:** Build the scraping/ingestion pipeline that fetches, parses, deduplicates, and normalizes documents from all 697 agencies into the Postgres `documents` table and Redis processing queue.
+
+**Parser architecture:**
+- All parsers live in `parsers/` and inherit from `BaseParser` (`parsers/base.py`)
+- Each parser accepts a URL and returns `List[RawDocument]`
+- No CAD extraction, no embedding in this phase — raw fetch + normalize only
+- Parsers are keyed by `platform_type` in the agency registry
+
+**Build order (highest agency coverage first):**
+
+| Step | Component | Target agencies |
+|---|---|---|
+| 1 | RSS parser | Generic fallback |
+| 2 | CrimeMapping parser | ~11 agencies |
+| 3 | CivicPlus parser | ~103 agencies |
+| 4 | Nixle/Rave parser | ~49 agencies |
+| 5 | Socrata/ArcGIS parser | ~28 agencies |
+| 6 | PDF extractor | PDF-only agencies |
+| 7 | Deduplication layer | All parsers |
+| 8 | Temporal scheduler | All agencies |
+| 9 | Parser registry + health monitor | All agencies |
+
+**Exit criteria:** ≥60% agency coverage (≥418/697) with scheduler running and health monitor active.
 
 ## Critical Invariant
 
