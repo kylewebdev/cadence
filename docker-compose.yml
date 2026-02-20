@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_DB: ca_le_platform
+      POSTGRES_DB: cadence_platform
       POSTGRES_USER: cadence
       POSTGRES_PASSWORD: cadence
     ports:
@@ -10,7 +10,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U cadence -d ca_le_platform"]
+      test: ["CMD-SHELL", "pg_isready -U cadence -d cadence_platform"]
       interval: 5s
       timeout: 5s
       retries: 5

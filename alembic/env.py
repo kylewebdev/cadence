@@ -20,10 +20,8 @@ if alembic_config.config_file_name is not None:
 
 alembic_config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
-# Import target_metadata from your models here once they exist:
-# from src.registry.models import Base
-# target_metadata = Base.metadata
-target_metadata = None
+from src.registry.models import Base
+target_metadata = Base.metadata
 
 
 def run_migrations_offline() -> None:
