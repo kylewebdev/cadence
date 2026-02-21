@@ -1,0 +1,6 @@
+agency_id,parser_id,docs_fetched,doc_count,docs_inserted,date_range_min,date_range_max,error
+anaheim-police-department,civicplus,0,0,0,,,
+alameda-county-district-attorney,socrata,0,0,0,,,
+alhambra-police-department,civicplus,0,0,0,,,
+alpine-county-district-attorney,civicplus,3,0,0,2026-01-15T00:00:00,2026-02-19T00:00:00,
+alpine-county-sheriffs-department,civicplus,3,0,0,2026-01-15T00:00:00,2026-02-19T00:00:00,
