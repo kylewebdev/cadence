@@ -1,0 +1,3325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<!-- Google Tag Manager for GA4 -->
+				<script>(function(w,d,s,l,i){w.GAMeasurementID='G-LVXYBNN46R';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');</script>
+				<!-- End Google Tag Manager for GA4 -->
+				<script type='text/javascript'>
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				</script>
+	<script>
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+		}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+			</script>
+			
+
+	<script type="text/javascript">
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = true;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script async src="https://docaccess.com/docbox.js"></script>
+	<!--Google Meta Tag -->
+
+<meta name="google-site-verification" content="3VCfyaRB6C-6A9vK68fPJ6jmHQdrxGNgwfV7G7tIyu8">
+
+<!-- End Google Meta Tag -->
+
+	
+	
+	<meta name="theme-color" content="rgb(0, 29, 82)">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+		
+
+			<script src="/Assets/Scripts/jQuery/jquery-2.2.4.min.js"></script>
+	<script src="/Assets/Scripts/jQuery/jQuery-migrate-1.4.1.js" type="text/javascript"></script>
+	
+
+	<!--[if IE 6]><script language="JavaScript" type="text/javascript"> var isie6 = true; </script><![endif]-->
+	<!--[if IE 7]><script language="JavaScript" type="text/javascript"> var isie7 = true; </script><![endif]-->
+	<!--[if IE 8]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<!--[if IE 9]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<script type="text/javascript"><!--
+	var intCountryCode = 840;
+	var externalSiteDialogHeight = '390px';
+	var order = '';
+//--></script>
+	
+	<link href="/-1465647691.css" rel="stylesheet" type="text/css">	<link href="/-1407546659.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="/Assets/Styles/Print.css" media="print">
+	<script type="text/javascript">
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	</script>
+	<!--CPHeadContent-->
+	<script src="/-28722462.js" type="text/javascript"></script>
+	
+	
+	
+
+    <title>News Flash &#x2022; Alhambra, CA</title>
+    <link rel="stylesheet" href="/static/NewsFlash/css/styles.css?v=GFUGePpspuo16Mk97B_2lM7QyvimnGnzN6859UnFrJM" />
+    <link rel="stylesheet" id="LiveEditCSS" type="text/css" href="/Assets/AdminRefresh/LiveEdit/Styles/LiveEdit.css" />
+
+	<!--This is cached layout-->
+
+
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/App_Themes/ie8.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/App_Themes/ie7.css"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/App_Themes/ie6.css"><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/Scripts/html5.js"></script><![endif]-->
+
+	<script type="text/javascript">
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	</script>
+	<script src="/Assets/Scripts/AlpineJS/3.14.1/alpine.min.js" type="text/javascript" defer="defer"></script>
+</head>
+<body class="wide ">
+
+    <script>jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});</script>
+
+    <div id="fb-root"></div>
+<div id=skipToContentLinks>
+<a href="#contentarea" target="_self" class="skipToContentLink">Skip to Main Content</a>
+</div>
+    <form id="frmReferenceFormForTelerikEditorDialogs"></form>
+
+        <input type="hidden" id="GoogleMapsKey" value="AIzaSyDWUuE-ifkbhxblF920N8MjpBdTg1Wt784">
+
+
+
+    <input type="hidden" id="cpcDomain" value="https://cp-civicplusuniversity2.civicplus.com">
+    <input type="hidden" id="hdnStructureID" value="7">
+    <input type="hidden" id="hdnContentCollectionID" value="3c182709-3953-40ed-8654-00dfd988445f">
+    <input type="hidden" id="hdnWorkingCopyID" value="00000000-0000-0000-0000-000000000000">
+    <input type="hidden" id="hdnThemeID" value="16">
+    <input type="hidden" id="pageIsFrontEnd" value="true">
+    <input type="hidden" id="pageModuleID" value="1">
+    <input type="hidden" id="pagePageID">
+
+        <input type="hidden" id="hdnModuleID" value="1">
+    <div id="stickyPlaceholder"></div>
+    <div id="outer-wrap" class="outer-wrap">
+        <div id="inner-wrap" class="inner-wrap">
+                <div id="divToolbars" class="cpToolbars newCP mui-fixed" style="">
+                    
+
+
+
+                </div>
+            <div id="bodyWrapper">
+                <div id="mainNavHolderMobile" class="mainNavHolderMobile"></div>
+                
+<div data-cprole="structuralContainer" id="bodyContainerTS">
+<!-- <div data-cpRole="banner" id="banner2" class="fixedBannerTS"></div> --><!-- Header Container --><header data-cprole="structuralContainer" id="headerContainerTS">
+<div class="siteWrap8"><div data-cprole="structuralContainer" id="flexHeaderTS">
+<div data-cprole="banner" id="bannerLogoTS" class="bannerLogoTS empty">
+
+
+
+
+				<a id="bannerLogoTS-56" style="			display: block; text-align: center;
+" class="bannerObject" href="/" target="_self"><img alt="Alhambra California Homepage" class="bannerObject" height="60" src="/ImageRepository/Document?documentID=6327" width="250"></a>
+</div><nav data-cprole="nav" id="mainNav" class="siteNav mainNav" role="navigation">
+<ol id="mainNavMenu" data-parent="1" class="rootNavMenu" role="menu"><!--
+--><li id="MainItem9" class="topMenuItem" role="none" data-pageid="9" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' id="mainNavHowDoI" class="navMainItem mainNavItem mainNavItem1 " href="/9/How-Do-I" target="_self">   How Do I...  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem27" class="topMenuItem" role="none" data-pageid="27" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' id="mainNavGovernment" class="navMainItem mainNavItem mainNavItem2 " href="/27/Government" target="_self">   Government  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem159" class="topMenuItem" role="none" data-pageid="159" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' id="mainNavDepartments" class="navMainItem mainNavItem mainNavItem3 " href="/159/Departments" target="_self">   Departments  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem35" class="topMenuItem" role="none" data-pageid="35" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' id="mainNavDoingBusiness" class="navMainItem mainNavItem mainNavItem4 " href="/35/Doing-Business" target="_self">   Doing Business  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem31" class="topMenuItem" role="none" data-pageid="31" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' id="mainNavOurCommunity" class="navMainItem mainNavItem mainNavItem5 " href="/31/Our-Community" target="_self">   Our Community  </a>			<!--
+			--><!--
+			--></li><!---->
+</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=1&themeID=16&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	</script>
+
+
+<aside data-cprole="megaMenu" id="megaMenu" class="megaMenu" style="display: none;"><input type="hidden" id="megaMenuPopupDirection" value="0"><input type="hidden" id="megaMenuWidthReference" value="1"><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu9" class="contentTop mainNavMegaMenu megaMenuContainer pageID_9 hidden" data-orientation="horizontal">	<div id="cc170ca6f0-70f1-48b2-9172-83a678b7b478" data-containerid="170ca6f0-70f1-48b2-9172-83a678b7b478" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu27" class="contentTop mainNavMegaMenu megaMenuContainer pageID_27 hidden" data-orientation="horizontal">	<div id="cca4adc801-04f1-4d84-886f-5685e9c44e38" data-containerid="a4adc801-04f1-4d84-886f-5685e9c44e38" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu159" class="contentTop mainNavMegaMenu megaMenuContainer pageID_159 hidden" data-orientation="horizontal">	<div id="ccb6a7cbb8-0359-4533-a95a-5d5e6fd60ba7" data-containerid="b6a7cbb8-0359-4533-a95a-5d5e6fd60ba7" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu35" class="contentTop mainNavMegaMenu megaMenuContainer pageID_35 hidden" data-orientation="horizontal">	<div id="cc704a7aab-0ef6-4c94-9260-4160f301d12b" data-containerid="704a7aab-0ef6-4c94-9260-4160f301d12b" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu31" class="contentTop mainNavMegaMenu megaMenuContainer pageID_31 hidden" data-orientation="horizontal">	<div id="cc901cf112-d417-410f-8d53-eea25ee72adc" data-containerid="901cf112-d417-410f-8d53-eea25ee72adc" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside></aside></nav><div data-cprole="contentContainer" id="searchTS">	<div id="cc8c15f3c6-0c85-425c-9445-bfd37dc9f17f" data-containerid="8c15f3c6-0c85-425c-9445-bfd37dc9f17f" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="25">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col14 first" style="" data-widgetcontainerid="735f3957-7e87-4cb3-abce-fa2e5ccd9b7e">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col14 first last idf3f012c6-7243-494a-91c9-b3c22d8fe418" style="" data-widgetcontainerid="f3f012c6-7243-494a-91c9-b3c22d8fe418">	
+<div data-widget-id="7ee4a61e-d7ed-406b-859b-5b2cbf8282e6" data-widget-controller-path="/Layout/WidgetSearch">
+	
+	<script defer type="text/javascript" src="/Common/Controls/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+	<script defer src="/Areas/Layout/Assets/Scripts/Search.js" type="text/javascript"></script>
+	<script defer type="text/javascript">
+
+		$(document).ready(function () {
+			try {
+				$(".widgetSearchButton.widgetSearchButton7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").click(function (e) {
+				e.preventDefault();
+					if (false||$("#ysnSearchOnlyDept7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").is(':checked'))
+					{
+						doWidgetSearch($(this).siblings(".widgetSearchBox").val(), Number(0));
+					}
+					else {
+						doWidgetSearch($(this).siblings(".widgetSearchBox").val(), 0);
+					}
+			});
+			$("#searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").keypress(function (e) {
+				if (window.clipboardData) {
+					if (e.keyCode === 13) {
+						if ($("#ysnSearchOnlyDept7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").is(':checked') || false) {
+								doWidgetSearch($(this).val(), Number(0));
+							} else {
+								doWidgetSearch($(this).val(), 0);
+							}
+						return false;
+					}
+				} else {
+					if (e.which === 13) {
+						if ($("#ysnSearchOnlyDept7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").is(':checked') || false) {
+								doWidgetSearch($(this).val(), Number(0));
+							} else {
+								doWidgetSearch($(this).val(), 0);
+							}
+						return false;
+					}
+				}
+				return true;
+			});
+
+				if (true) {
+					var currentRequest = null;
+					var $searchField = $("#searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").autocomplete({
+						source: function (request, response) {
+							currentRequest = $.ajax({
+								url: '/Search/AutoComplete' + ($("#ysnSearchOnlyDept7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").is(':checked') || false? '?departmentId=0' : ''),
+								dataType: "json",
+								timeout: 10000,
+								beforeSend: function () {
+									if (currentRequest != null) {
+										currentRequest.abort();
+									}
+								},
+								data:
+								{
+									term: request.term,
+								},
+								success: function (data) {
+									response(data);
+									$('.autoCompleteError').remove();
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "timeout") {
+										if ($("#searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").siblings('.autoCompleteError').length == 0)
+											$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($("#searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6"));
+									}
+								}
+							});
+						},
+						html: true,
+						delay: 500,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+}
+}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	</script>
+
+	<section id="widgetPreviewSearch" class="widget widgetSearch skin65 widgetOptionSet51" style="display: block;" aria-label="Search">
+				<!-- For the button right and inside -->
+		<div class="widgetBody buttonRightInside">
+			<input class="widgetSearchBox widgetSearchBox7ee4a61e-d7ed-406b-859b-5b2cbf8282e6" cp5ph="true" id="searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6" name="searchField" onchange="searchBtnApplyQuery();" placeholder="Search..." title="Search..." type="text" value="">
+						<a href="/Search/Results" id="btnSearchIcon" class="widgetSearchButton widgetSearchButton7ee4a61e-d7ed-406b-859b-5b2cbf8282e6" role="button"><img alt="Search Icon" class="imageHover" data-hover="/ImageRepository/Document?documentID=6332" data-image="/ImageRepository/Document?documentID=6333" src="/ImageRepository/Document?documentID=6333"></a>
+
+			<label class="searchLabel" for="searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6">Search</label>
+		</div>
+
+	</section>
+
+
+<style scoped>
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #212121;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #212121;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #212121;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #212121;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox7ee4a61e-d7ed-406b-859b-5b2cbf8282e6
+	{
+		color: #212121;
+		height:60px;
+background:#F0F3FF;
+padding:0 65px 0 27px;
+font-family:Poppins;
+font-weight:500;
+border:none;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 30px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton7ee4a61e-d7ed-406b-859b-5b2cbf8282e6
+	{
+		margin:10px 12px 10px 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept7ee4a61e-d7ed-406b-859b-5b2cbf8282e6
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept7ee4a61e-d7ed-406b-859b-5b2cbf8282e6
+	{
+		position: relative;
+		top: .125em;
+	}
+
+</style>
+
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.1/jquery-ui.min.css">
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.1/jquery-ui.theme.min.css">
+
+
+
+<script type="text/javascript">
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField7ee4a61e-d7ed-406b-859b-5b2cbf8282e6").value;
+	}
+	</script>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col10 last" style="" data-widgetcontainerid="161b3c4e-bf61-436f-b387-99bfede7ec58">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col10 first last idaae4626c-ec63-4711-96bc-bbc7e70ef004" style="" data-widgetcontainerid="aae4626c-ec63-4711-96bc-bbc7e70ef004">	
+ 
+	<div data-widget-id='8dea4bc2-bfc5-4824-89be-035efc046e8b' data-modulename="customHtml" id='widgetCustomHtml8dea4bc2-bfc5-4824-89be-035efc046e8b' class="widget widgetCustomHtml skin80 narrow">
+	<div class="widgetBody pageStyles" id="widgetBody8dea4bc2-bfc5-4824-89be-035efc046e8b">
+		<div id="customHtml8dea4bc2-bfc5-4824-89be-035efc046e8b"><div>
+<div id="google_translate_element" style="max-height:40px;border:none;text-align:center"><script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script></div>
+</div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div>
+</div></div>
+</header><!-- Banner --><div data-cprole="structuralContainer" id="bannerContainerTS" class="noOverflowTS">
+<div data-cprole="banner" id="banner1"><div data-cprole="structuralContainer" id="bannerSizingTS">
+<div data-cprole="structuralContainer" id="bannerSearchTS">
+<div class="siteWrap8"></div>
+</div>
+</div>
+
+
+
+
+		<div id="bannerImagesJSON57" class="hidden"></div>
+		<div id="bannerSlideshowControls_banner1" class="bannerSlideshowControlsNew none " style="display:none">
+			<a id="arrowPrev_banner1" tabindex="0" class="arrowNew prev" aria-label="Banner Arrow Previous"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowLeft"></use></svg></a>
+			<a id="arrowNext_banner1" tabindex="0" class="arrowNew next" aria-label="Banner Arrow Next"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowRight"></use></svg></a>
+		</div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":57,"ThemeID":16,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":91,"BannerOptionID":57,"FileName":"/ImageRepository/Document?documentID=6325","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":93,"BannerOptionID":57,"FileName":"/ImageRepository/Document?documentID=6324","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":5,"BannerOptionID":57,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202504100751399895.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2025 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			</script>
+
+</div>
+</div><!-- Content container --><div data-cprole="structuralContainer" id="mainContainerTS">
+<div class="siteWrap4"><div data-cprole="structuralContainer" id="mainWrapTS" class="mainWrap" role="main">
+<div data-cprole="structuralContainer" id="siteSidebarTS" class="siteSidebar">
+<aside data-cprole="contentContainer" id="sidebarContainer1TS">	<div id="cc16c0db44-a0b9-4848-9f53-8649e705524b" data-containerid="16c0db44-a0b9-4848-9f53-8649e705524b" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><nav data-cprole="nav" id="secondaryNav" class="siteNav secondaryNav">
+
+
+
+
+
+	<ol role="menu" id="secondaryMenusecondaryNav" data-parent="4" class="rootNavMenu accordionNav">
+	<li role="menuitem" aria-haspopup="true" class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem891" data-pageid="891">
+		<div class="accordionNavItem">
+			<a href="/891/How-to-Participate-in-Alhambra-City-Coun" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">How to Participate in Alhambra City Council Meetings</a>
+		</div>
+			</li>
+
+	</ol>
+
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			//setup menu manager properties for secondary menu
+			menuManager.isSideMenuEditable = false;
+			menuManager.sideMenuMaxSubMenuLevels = 4;
+			menuManager.sideMenuHasCustomLinks = true;
+		});
+	</script>
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			$('*[id^="SideItem"]').each(function () {
+				var ids = $('[id="' + this.id + '"]');
+				if (ids.length > 1)
+					$.each(ids, function (index, value) {
+						value.id = value.id + '_' + index;
+					});
+			});
+
+			$('.hasAccordionChildren .openAccordionNav').click(function (e) {
+				e.preventDefault();
+				showHideAccordionMenuForSecondaryNav($(this));
+			});
+
+			$("#secondaryNav .grippy").each(function () {
+				menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+			});
+
+			$("#secondaryNav li").each(function () {
+				menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+			});
+		});
+	</script>
+
+
+
+</nav><aside data-cprole="contentContainer" id="sidebarContainer2TS">	<div id="cc0b02ba7e-8261-47e3-b897-e95ac4fd3530" data-containerid="0b02ba7e-8261-47e3-b897-e95ac4fd3530" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div><div data-cprole="structuralContainer" id="outerContentWrapTS" class="outerContentWrap">
+<div data-cprole="structuralContainer" id="contentWrapTS" class="contentWrap">
+<div data-cprole="breadCrumbs" id="breadCrumbs" class="breadCrumbContainer">		<ol class="semanticList breadCrumbs">
+			<li><a class="breadCrumb" href="/">Home</a></li>
+		
+
+    <li><a class="breadCrumb" href="/m/NewsFlash">NewsFlash</a></li>
+    <li id="breadCrumbCat"></li>
+</ol>
+
+	   
+    
+</div><div data-cprole="mainContentContainer" id="moduleContent">
+	
+
+    <div id="outer-wrapper" class="redesign-container" aria-live="polite" hx-on::after-settle="autoFocus()">
+        
+
+    <div id="contentarea" class="content container p-md-4 p-3 grid border-top">
+        <!-- Header -->
+        <header class="mb-3 mb-sm-5">
+            
+<div id="articles-header-search" class="row gy-2 gy-md-0 mb-2 mb-sm-3">
+    <div class="col-md-6">
+        <div class="input-group"><input class="form-control rounded-pill border search-input" name="searchTerms" placeholder="Search and discover"
+       value="" aria-label="Search Input" type="search" id="search-input" hx-get="/m/newsflash" 
+       hx-trigger="change" hx-target="#main-wrapper" hx-swap="outerHTML" 
+       hx-push-url="true" hx-include="[name='cat'], [name='sortBy']" asp-for="SearchTerms">
+<span class="input-group-append position-absolute module-search end-0">
+    <button class="btn btn-outline-secondary btn-search rounded-pill border-0 shadow-none" type="button" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             class="bi bi-search" viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+    </button>
+</span></div>
+    </div>
+    <div class="col-md-3">
+        <select class="form-select" aria-label="Category" name="cat" hx-get="/m/newsflash" hx-trigger="change" hx-target="#main-wrapper" hx-swap="outerHTML" hx-push-url="true" hx-include="[name='sortBy'], [name='searchTerms']" data-val="true" data-val-required="The CategoryId field is required." id="CategoryId">
+            <option value="">All Categories</option>
+                <option value="1">Home</option>
+                <option value="7">News </option>
+                <option value="8">Police Department</option>
+                <option value="9">Police Press Releases</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select class="form-select" aria-label="Sort By" name="sortBy" hx-get="/m/newsflash" hx-trigger="change" hx-target="#main-wrapper" hx-swap="outerHTML" hx-push-url="true" hx-include="[name='cat'], [name='searchTerms']" data-val="true" data-val-required="The SortBy field is required." id="SortBy">
+            <option value="0" selected="selected">Sort by category</option>
+            <option value="1">Sort by most recent</option>
+        </select>
+    </div>
+</div>
+            <div class="align-middle header-links d-flex justify-content-end grid gap-sm-3 gap-2">
+                   <div class="d-sm-block d-none">
+        <a class="icon-link d-flex align-items-center gap-1" id="archive_link" hx-swap-oob="false"
+            href="/civicalerts.aspx?ARC=L&amp;What=1&amp;CC=0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.54 5.23L19.15 3.55C18.88 3.21 18.47 3 18 3H6C5.53 3 5.12 3.21 4.84 3.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V6.5C21 6.02 20.83 5.57 20.54 5.23ZM6.24 5H17.76L18.57 5.97H5.44L6.24 5ZM5 19V8H19V19H5ZM13.45 10H10.55V13H8L12 17L16 13H13.45V10Z" />
+            </svg>
+            View Archive
+        </a>
+                   </div>
+                    <div class="d-sm-block d-none">
+        <a class="icon-link d-flex align-items-center gap-1" href="/rss.aspx#newsFlash">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M6.18 20.0001C7.38398 20.0001 8.36 19.0241 8.36 17.8201C8.36 16.6162 7.38398 15.6401 6.18 15.6401C4.97602 15.6401 4 16.6162 4 17.8201C4 19.0241 4.97602 20.0001 6.18 20.0001Z" />
+                <path
+                    d="M4 4.43994V7.26994C11.03 7.26994 16.73 12.9699 16.73 19.9999H19.56C19.56 11.4099 12.59 4.43994 4 4.43994ZM4 10.0999V12.9299C7.9 12.9299 11.07 16.0999 11.07 19.9999H13.9C13.9 14.5299 9.47 10.0999 4 10.0999Z" />
+            </svg>
+            RSS Feed
+        </a>
+                    </div>
+                   <a class="icon-link d-flex align-items-center gap-1" href="/list.aspx?Mode=Subscribe#newsFlash">
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                           <path
+                               d="M12.0003 22C13.1003 22 14.0003 21.1 14.0003 20H10.0003C10.0003 21.1 10.9003 22 12.0003 22ZM18.0003 16V11C18.0003 7.93 16.3703 5.36 13.5003 4.68V4C13.5003 3.17 12.8303 2.5 12.0003 2.5C11.1703 2.5 10.5003 3.17 10.5003 4V4.68C7.64027 5.36 6.00027 7.92 6.00027 11V16L4.00027 18V19H20.0003V18L18.0003 16ZM16.0003 17H8.00027V11C8.00027 8.52 9.51027 6.5 12.0003 6.5C14.4903 6.5 16.0003 8.52 16.0003 11V17ZM7.58027 4.08L6.15027 2.65C3.75027 4.48 2.17027 7.3 2.03027 10.5H4.03027C4.18027 7.85 5.54027 5.53 7.58027 4.08ZM19.9703 10.5H21.9703C21.8203 7.3 20.2403 4.48 17.8503 2.65L16.4303 4.08C18.4503 5.53 19.8203 7.85 19.9703 10.5Z" />
+                       </svg>
+                       Notify Me
+                   </a>
+                <button id="more-tools-btn" class="p-1 btn d-flex gap-1 d-sm-none d-block" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="more-tools-options">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
+                    </svg>
+                    More Tools
+                </button>
+                <ul id="more-tools-options" role="menu" aria-labelledby="more-tools-btn"
+                    class="dropdown-menu dropdown-menu-end d-sm-none">
+                    <li class="dropdown-item">
+        <a class="icon-link d-flex align-items-center gap-1" id="archive_link" hx-swap-oob="false"
+            href="/civicalerts.aspx?ARC=L&amp;What=1&amp;CC=0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.54 5.23L19.15 3.55C18.88 3.21 18.47 3 18 3H6C5.53 3 5.12 3.21 4.84 3.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V6.5C21 6.02 20.83 5.57 20.54 5.23ZM6.24 5H17.76L18.57 5.97H5.44L6.24 5ZM5 19V8H19V19H5ZM13.45 10H10.55V13H8L12 17L16 13H13.45V10Z" />
+            </svg>
+            View Archive
+        </a>
+                    </li>
+                    <li class="dropdown-item">
+        <a class="icon-link d-flex align-items-center gap-1" href="/rss.aspx#newsFlash">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M6.18 20.0001C7.38398 20.0001 8.36 19.0241 8.36 17.8201C8.36 16.6162 7.38398 15.6401 6.18 15.6401C4.97602 15.6401 4 16.6162 4 17.8201C4 19.0241 4.97602 20.0001 6.18 20.0001Z" />
+                <path
+                    d="M4 4.43994V7.26994C11.03 7.26994 16.73 12.9699 16.73 19.9999H19.56C19.56 11.4099 12.59 4.43994 4 4.43994ZM4 10.0999V12.9299C7.9 12.9299 11.07 16.0999 11.07 19.9999H13.9C13.9 14.5299 9.47 10.0999 4 10.0999Z" />
+            </svg>
+            RSS Feed
+        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- End of Header -->
+        <main role="main" id="main-wrapper" aria-live="polite" hx-on::after-settle="autoFocus()">
+            <h1 class="visually-hidden">News Flash</h1>
+            
+    <div id="newsflash-carousel" class="carousel carousel-dark slide" data-bs-interval="false">
+        <div class="shadow p-3 rounded border bg-white article-link">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div id="newsflash-carousel-slide-7-288">
+    <div class="row m-0">
+        <style scoped>
+            #newsflash-carousel-slide-7-288 {
+                --categoryColor: var(--cp-module-style-color6);
+            }
+        </style>
+            <div id="newsflash-carousel-item-288-image" class="carousel-image col-md-6 rounded ps-0">
+                <img src="/ImageRepository/Document?documentID=5488" alt="" class="mw-100 mh-100 rounded" />
+            </div>
+        <div class="col-md-6 d-flex align-items-start flex-column carousel-content pe-0">
+            <div id="newsflash-carousel-item-288-content">
+                <h2 id="newsflash-carousel-item-288-title" class="article-truncate-3 lh-sm fs-3 text-break">
+                    <a href="/m/newsflash/Home/Detail/288" class="article-title-link"
+                       hx-get="/m/newsflash/Home/Detail/288"
+                       hx-trigger="click"
+                       hx-target="#outer-wrapper"
+                       hx-swap="innerHTML"
+                       hx-push-url="true">
+                        Alhambra City Council Advances Plans for Permanent Dog Park
+                    </a>
+                </h2>
+                <div id="newsflash-carousel-item-288-summary"
+                    class="fs-6 article-truncate-5 article-preview lh-sm mb-3">
+                    At its regular meeting on June 24, 2024, the Alhambra City Council authorized staff to circulate a Request for Proposals (RFP) to provide design and specifications for a permanent dog park, and for staff to take the required steps for implementation. The future dog park installation is set to be located near the former “Paw-Pup Dog Park” pilot project area, next to the Alhambra Golf Course.“The Alhambra City Council is thrilled to see this initiative advancing,” said Mayor Sasha Renée Pérez. “Alhambra residents have long expressed their desire for a permanent dog park, particularly following the success of our pilot program. Now, we are able to make this a permanent feature for our residents and their furry friends!”In fall 2023, the City of Alhambra hosted a temporary pilot “Paw-Pup Dog Park” for two months. As part of the program, the community was invited to provide input regarding interest in a permanent dog park through a survey, which earned over 1300 responses with about 99% of participants in favor of a permanent installation in Alhambra.As next steps, staff is seeking professional engineering and design services to provide plans and specifications for the Alhambra Dog Park Project. Anticipated dog park amenities include trees, synthetic turf, walking paths, a restroom facility, secure double fencing, benches, shade structures and dog play features.Proposals for the engineering and design services RFP are due to the Parks and Recreation Department no later than 5 PM on Monday, July 22, 2024. For more information, visit the City’s website at www.cityofalhambra.org.
+                </div>
+            </div>
+            <div id="newsflash-carousel-item-288-footer" class="newsflash-carousel-footer mt-auto fs-5 articles-category mw-100">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mb-1 text-truncate mw-100">
+                    News 
+                </div>
+                <div class="fst-italic text-body-secondary fs-6">
+                    Posted on June 25, 2024 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center carousel-articles-navigation my-3">
+            <button class="btn p-1 d-flex rounded-circle" type="button" aria-label="Previous Slide"
+                data-bs-target="#newsflash-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <div class="carousel-indicators mx-3 my-0">
+                <button type="button" data-bs-target="#newsflash-carousel" data-bs-slide-to="0" class="btn active"
+                    aria-current="true" aria-label="Go to Slide 1">
+                </button>
+            </div>
+            <button class="btn p-1 d-flex rounded-circle" type="button" aria-label="Next Slide"
+                data-bs-target="#newsflash-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div aria-live="polite" id="carousel-live-region" aria-atomic="true" class="visually-hidden"></div>
+    </div>
+
+                <div id="articles-category-1" data-stitchpoint="False" class="articles-category article-category">
+        <style scoped>
+            #articles-category-1 {
+                --categoryColor: var(--cp-module-style-color6);
+            }
+        </style>
+        <div id="articles-category-1-header" class="d-flex align-items-center position-relative"
+            onmouseover="newsCategoryMouseOver(this, event, 1);"
+            onmouseout="newsCategoryMouseOut(this, event);"
+            onfocus="this.onmouseover();"
+            onblur="this.onmouseout();">
+            <div class="col-8">
+                <h2 class="fs-2 mb-0 pb-1">Home</h2>
+            </div>
+            <div class="col text-end category-count">
+                2
+                <span class="d-none d-sm-inline">
+                    news
+                    items
+                </span>
+            </div>
+        </div>
+
+        <ul id="list-articles-category-1" aria-labelledby="articles-category-1-header" class="article-list-group list-group list-group-flush ps-0">
+                <li id="list-articles-category-1-16" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-1-16 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=88" />
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-16-cat-1-main-content"
+                onmouseover="newsItemMouseOver(this, event, 16);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-16-cat-1-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/16" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/16"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article Stay connected!">
+                            Stay connected!
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p>Notify Me allows you to subscribe to an unlimited number of email lists. Receive email or text message updates regarding the information you have requested. Check out <a href="/list.aspx" title="Notify Me">Notify Me</a> today!</p></p>
+                    </div>
+            </div>
+            <div id="article-16-cat-1-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Home
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on July 12, 2021 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-1-13" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-1-13 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=2150" />
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-13-cat-1-main-content"
+                onmouseover="newsItemMouseOver(this, event, 13);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-13-cat-1-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="https://www.alhambrahousingelement.com/project-documents" class="article-title-link" target=_blank
+                           aria-label="Open Article Housing Element"
+                           >
+                            Housing Element
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><p id="isPasted">The Housing Element is a chapter in the City&rsquo;s General Plan. It is a blueprint for how the City will plan for its share of regional housing need. The Housing Element outlines the City&rsquo;s goals, policies and actions for how it will meet the community&rsquo;s vision regarding future housing need. The City updated and adopted other elements of the General Plan in 2019, and now it needs to update the Housing Element. Visit the <a href="https://www.alhambrahousingelement.com/about">Housing Element website</a> to learn more.</p><p></p><p></p><p></p></p>
+                    </div>
+            </div>
+            <div id="article-13-cat-1-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Home
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on July 12, 2021 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+
+        </ul>
+
+    </div>
+    <div id="articles-category-7" data-stitchpoint="False" class="articles-category article-category">
+        <style scoped>
+            #articles-category-7 {
+                --categoryColor: var(--cp-module-style-color6);
+            }
+        </style>
+        <div id="articles-category-7-header" class="d-flex align-items-center position-relative"
+            onmouseover="newsCategoryMouseOver(this, event, 7);"
+            onmouseout="newsCategoryMouseOut(this, event);"
+            onfocus="this.onmouseover();"
+            onblur="this.onmouseout();">
+            <div class="col-8">
+                <h2 class="fs-2 mb-0 pb-1">News </h2>
+            </div>
+            <div class="col text-end category-count">
+                <span class="current-item-counter">3</span> of 13
+                <span class="d-none d-sm-inline">
+                    news
+                    items
+                </span>
+            </div>
+        </div>
+
+        <ul id="list-articles-category-7" aria-labelledby="articles-category-7-header" class="article-list-group list-group list-group-flush ps-0">
+                <li id="list-articles-category-7-349" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-7-349 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=7462" style="object-position: 50% 50%"/>
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-349-cat-7-main-content"
+                onmouseover="newsItemMouseOver(this, event, 349);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-349-cat-7-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/349" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/349"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article Student Art Contest for Alhambra&#x27;s 2027 TOR Float">
+                            Student Art Contest for Alhambra's 2027 TOR Float
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><h2 class="subhead1" style="text-align: center;"><strong>Calling all Alhambra Unified School District Elementary Students:</strong></h2><h2 class="subhead1" style="text-align: center;">Submit your art to be the inspiration for the City of Alhambra's 2027 Tournament of Roses Float!</h2><p></p><p><strong>Criteria:&nbsp;</strong></p><ul><li>Artwork must relate to the 2027 Tournament of Roses Parade theme "Welcome", which celebrates the simple joy of belonging, warmth of family either related or chosen, and love of community.</li><li>All mediums are welcome, for example: pencil, pen, crayons, markets, paint, and/or digital desing.</li></ul><p><strong>Eligibility and Rules:</strong></p><ul><li>Open to Alhambra Unified Elementary School students attending a school in Alhambra and living in Alhambra.</li><li>Students must have permission from their parent/legal guardian to complete registration.</li><li>One entry per student. All artwork must be exclusively original and cannot incorporate anything, in whole, or in part that is owned or created by a third party.</li></ul><p><strong>Submissions due:</strong>&nbsp;</p><p>5:30 P.M. on Thursday, March 5, 2026</p><p>Please deliver your artwork in person or by mail to Alhambra City Hall, Parks and Recreation Department at 111 South First Street, Alhambra, CA 91801</p><p></p><p><a href="/DocumentCenter/View/7461" target="_blank" rel="noopener">See full form submission form here.</a></p></p>
+                    </div>
+            </div>
+            <div id="article-349-cat-7-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    News 
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on February 10, 2026 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-7-348" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-7-348 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=7434" style="object-position: 50% 50%"/>
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-348-cat-7-main-content"
+                onmouseover="newsItemMouseOver(this, event, 348);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-348-cat-7-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/348" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/348"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article New Multi-Unit Housing Smoking Ordinance In Effect">
+                            New Multi-Unit Housing Smoking Ordinance In Effect
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><p data-pasted="true">The Alhambra City Council passed, approved, and adopted a new law regarding smoking and smoking in multi-unit housing. This new ordinance will be implemented in two-phases with Phase 1 starting January 17, 2026 and Phase 2 implemented by and after January 17, 2029.</p><p>Visit the following website to learn more: <a data-fr-linked="true" href="https://www.alhambraca.gov/874/Multi-Unit-Housing-Smoking-Regulations" data-pasted="true">https://www.alhambraca.gov/874/Multi-Unit-Housing-Smoking-Regulations</a></p></p>
+                    </div>
+            </div>
+            <div id="article-348-cat-7-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    News 
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on February 02, 2026 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-7-340" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-7-340 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=7093" style="object-position: 34.752716% 100%"/>
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-340-cat-7-main-content"
+                onmouseover="newsItemMouseOver(this, event, 340);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-340-cat-7-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/340" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/340"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article City of Alhambra to Break Ground  on New Community Center">
+                            City of Alhambra to Break Ground  on New Community Center
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><p data-pasted="true">Alhambra, CA — The City of Alhambra is pleased to announce the Alhambra Community Center Groundbreaking Ceremony on Monday, October 20, 2025. The project is made possible by $25 million in state funding, secured through the advocacy of Senator Susan Rubio and Assemblymember Mike Fong.</p><p>“Thanks to strong support at the state level, we're turning an underutilized space into something truly meaningful,” said Mayor Katherine Lee. “We’re creating a Community Center where residents of all ages can connect, learn and thrive.”</p><p>The future 17,000-square-foot Alhambra Community Center will serve as a dynamic hub for programs, events and community gatherings. Planned features include:</p><ul><li>A variety of leisure classes for seniors, adults, teens and children</li><li>Meeting and conference rooms</li><li>Multipurpose space for fitness, arts and enrichment activities</li><li>An Emergency Operations Center</li><li><span style="white-space:pre;">P</span>rogrammable outdoor space</li><li>A rentable rooftop terrace with views of the San Gabriel Mountains</li><li>A special event area with a pre-function courtyard and caterer’s kitchen</li></ul><p>Construction activities are expected to begin later this fall with a completion date to be determined.</p><p># # #</p><p></p></p>
+                    </div>
+            </div>
+            <div id="article-340-cat-7-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    News 
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on October 22, 2025 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+
+        </ul>
+
+            <div class="d-flex justify-content-end px-0 pt-4">
+                <a class="btn text-decoration-none btn-show-more" role="button" href="/m/newsflash?cat=7"
+                   hx-trigger="click"
+                   hx-get="/m/newsflash?cat=7"
+                   hx-target="#main-wrapper"
+                   hx-swap="outerHTML"
+                   hx-push-url="true"
+                   hx-on::before-request="document.querySelector('#CategoryId').value=7"
+                >
+                    Show More <span class="visually-hidden">news stories for News </span>
+                </a>
+            </div>
+    </div>
+    <div id="articles-category-8" data-stitchpoint="False" class="articles-category article-category">
+        <style scoped>
+            #articles-category-8 {
+                --categoryColor: var(--cp-module-style-color6);
+            }
+        </style>
+        <div id="articles-category-8-header" class="d-flex align-items-center position-relative"
+            onmouseover="newsCategoryMouseOver(this, event, 8);"
+            onmouseout="newsCategoryMouseOut(this, event);"
+            onfocus="this.onmouseover();"
+            onblur="this.onmouseout();">
+            <div class="col-8">
+                <h2 class="fs-2 mb-0 pb-1">Police Department</h2>
+            </div>
+            <div class="col text-end category-count">
+                <span class="current-item-counter">3</span> of 4
+                <span class="d-none d-sm-inline">
+                    news
+                    items
+                </span>
+            </div>
+        </div>
+
+        <ul id="list-articles-category-8" aria-labelledby="articles-category-8-header" class="article-list-group list-group list-group-flush ps-0">
+                <li id="list-articles-category-8-254" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-8-254 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=6543" />
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-254-cat-8-main-content"
+                onmouseover="newsItemMouseOver(this, event, 254);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-254-cat-8-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="https://www.cityofalhambra.org/775/Alerts-Notifications" class="article-title-link" target=_blank
+                           aria-label="Open Article Alhambra Alerts"
+                           >
+                            Alhambra Alerts
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p>Sign up to receive emergency alerts and severe weather warnings that could directly impact you and your family. The City of Alhambra is able to send you emergency alerts via text message, email, pager, or voice mail based on your preferences.</p></p>
+                    </div>
+            </div>
+            <div id="article-254-cat-8-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Police Department
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on August 11, 2022 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-8-253" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-8-253 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-left">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=3576" />
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-253-cat-8-main-content"
+                onmouseover="newsItemMouseOver(this, event, 253);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-253-cat-8-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/253" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/253"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article Text-to-911">
+                            Text-to-911
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p>Learn about the Alhambra Police Department Text-to-911 service. This service can be used by all cellular phones to help those who are deaf, hard of hearing, speech impaired, and anyone who might be unsafe if they were to be heard.</p></p>
+                    </div>
+            </div>
+            <div id="article-253-cat-8-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Police Department
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on August 11, 2022 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-8-252" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-8-252 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 article-preview-image-right d-flex">
+            <div class="col rounded article-preview-image">
+                <img class="rounded mw-100 mh-100" alt="" src="/ImageRepository/Document?documentID=3600" />
+            </div>
+        <div class="col-sm-8 col-md-9 d-flex flex-column justify-content-between">
+            <div id="article-252-cat-8-main-content"
+                onmouseover="newsItemMouseOver(this, event, 252);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-252-cat-8-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/252" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/252"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article Road Safety">
+                            Road Safety
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p>It's back to school for AUSD. Drivers, please be on alert in school zones and obey traffic signs and speed limit. Keep your eyes on the road and watch for other roadway users, including people walking and cycling.</p></p>
+                    </div>
+            </div>
+            <div id="article-252-cat-8-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Police Department
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on August 14, 2022 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+
+        </ul>
+
+            <div class="d-flex justify-content-end px-0 pt-4">
+                <a class="btn text-decoration-none btn-show-more" role="button" href="/m/newsflash?cat=8"
+                   hx-trigger="click"
+                   hx-get="/m/newsflash?cat=8"
+                   hx-target="#main-wrapper"
+                   hx-swap="outerHTML"
+                   hx-push-url="true"
+                   hx-on::before-request="document.querySelector('#CategoryId').value=8"
+                >
+                    Show More <span class="visually-hidden">news stories for Police Department</span>
+                </a>
+            </div>
+    </div>
+    <div id="articles-category-9" data-stitchpoint="False" class="articles-category article-category">
+        <style scoped>
+            #articles-category-9 {
+                --categoryColor: var(--cp-module-style-color6);
+            }
+        </style>
+        <div id="articles-category-9-header" class="d-flex align-items-center position-relative"
+            onmouseover="newsCategoryMouseOver(this, event, 9);"
+            onmouseout="newsCategoryMouseOut(this, event);"
+            onfocus="this.onmouseover();"
+            onblur="this.onmouseout();">
+            <div class="col-8">
+                <h2 class="fs-2 mb-0 pb-1">Police Press Releases</h2>
+            </div>
+            <div class="col text-end category-count">
+                <span class="current-item-counter">3</span> of 41
+                <span class="d-none d-sm-inline">
+                    news
+                    items
+                </span>
+            </div>
+        </div>
+
+        <ul id="list-articles-category-9" aria-labelledby="articles-category-9-header" class="article-list-group list-group list-group-flush ps-0">
+                <li id="list-articles-category-9-347" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-9-347 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 ">
+        <div class=" d-flex flex-column justify-content-between">
+            <div id="article-347-cat-9-main-content"
+                onmouseover="newsItemMouseOver(this, event, 347);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-347-cat-9-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/347" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/347"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article School District Staff Member Arrested Following Privacy Investigation">
+                            School District Staff Member Arrested Following Privacy Investigation
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><strong id="isPasted" style="box-sizing: content-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: normal; font-size: 15.2px; font-family: Arial; vertical-align: baseline; color: rgb(20, 20, 12); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">ALHAMBRA, Calif</strong><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important; box-sizing: inherit;">. &mdash;&nbsp;</span>On January 22, 2026, the Alhambra Police Department was notified by personnel from the Alhambra Unified School District regarding allegations involving a staff member at Garfield Elementary School. The allegations involved the reported unauthorized recording of a female student without her knowledge. Officers promptly initiated an investigation, which led to the identification of the suspect as Christopher Ryan Ramirez, a resident of Monrovia.</p><p>Based on the findings of the investigation, Ramirez was arrested for Penal Code 647(j)(2) &ndash; Invasion of Privacy. He was subsequently booked at the Alhambra City Jail.</p><p>The Alhambra Police Department takes all allegations involving the safety and privacy of students seriously and works closely with School District officials to ensure a safe learning environment for all students.</p><p>This investigation remains ongoing. Anyone with additional information is encouraged to contact the Alhambra Police Department Investigations Division at 626-570-5157.</p><p style="text-align: center; margin: 0px 0px 1.4em; box-sizing: inherit; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(20, 20, 12); line-height: 1.5;">###</p><hr style="box-sizing: inherit; height: 1px; background: rgb(176, 192, 208); border: 0px; width: 100%; clear: both; user-select: none; break-after: page;"><p style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;"><strong id="isPasted" style="box-sizing: content-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: normal; font-size: 15.2px; font-family: Arial; vertical-align: baseline; color: rgb(20, 20, 12); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Media Contact</strong><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important; box-sizing: inherit;">: Grant Spencer, Lieutenant</span><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important; box-sizing: inherit;">626-308-4817, gspencer@alhambrapd.org</span></p></p>
+                    </div>
+            </div>
+            <div id="article-347-cat-9-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Police Press Releases
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on January 22, 2026 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-9-346" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-9-346 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 ">
+        <div class=" d-flex flex-column justify-content-between">
+            <div id="article-346-cat-9-main-content"
+                onmouseover="newsItemMouseOver(this, event, 346);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-346-cat-9-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/346" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/346"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article Stabbing">
+                            Stabbing
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><strong id="isPasted" style="box-sizing: content-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: normal; font-size: 15.2px; font-family: Arial; vertical-align: baseline; color: rgb(20, 20, 12); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">ALHAMBRA, Calif</strong><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important; box-sizing: inherit;">. &mdash;&nbsp;</span>On January 6, 2026, at approximately 2:00 pm, Alhambra Police Department&rsquo;s Communication Center received a call regarding a male who was stabbed in the area of Atlantic Boulevard and Spruce Street. Officers responded to the area and contacted a male subject suffering from a stab wound. The suspect is described as a Hispanic adult male wearing all black clothing. The suspect fled the area prior to officers&rsquo; arrival, and a search in the surrounding area is ongoing for the suspect.</p><p>As a precautionary measure, a nearby school was placed on lockdown to ensure the safety of students and staff. No students, teachers, or parents were involved in the incident, and no injuries were reported at the school. The lockdown has since been lifted, and students have been released to their parents.</p><p>The victim was transported to a local hospital for treatment and is in stable condition. This investigation is ongoing. Anyone with information regarding this incident is encouraged to contact the Alhambra Police Department. </p><p style="text-align: center; margin: 0px 0px 1.4em; box-sizing: inherit; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(20, 20, 12); line-height: 1.5;">###</p><hr style="box-sizing: inherit; height: 1px; background: rgb(176, 192, 208); border: 0px; width: 100%; clear: both; user-select: none; break-after: page;"><p style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;"><strong id="isPasted" style="box-sizing: content-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: normal; font-size: 15.2px; font-family: Arial; vertical-align: baseline; color: rgb(20, 20, 12); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Media Contact</strong><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important; box-sizing: inherit;">: Henry Reyes, Sergeant</span><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important; box-sizing: inherit;">626-308-4820, hreyes@alhambrapd.org</span></p></p>
+                    </div>
+            </div>
+            <div id="article-346-cat-9-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Police Press Releases
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on January 06, 2026 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+    <li id="list-articles-category-9-332" class="list-group-item px-0 py-3 bg-transparent"
+         >
+        <div class="border-article article-link">
+    <style scoped>
+        #list-articles-category-9-332 {
+            --categoryColor: var(--cp-module-style-color6);
+        }
+    </style>
+    <div class="row m-0 ">
+        <div class=" d-flex flex-column justify-content-between">
+            <div id="article-332-cat-9-main-content"
+                onmouseover="newsItemMouseOver(this, event, 332);"
+                onmouseout="newsItemMouseOut(this, event);"
+                onfocus="this.onmouseover();"
+                onblur="this.onmouseout();">
+                <h3 id="article-332-cat-9-title" class="article-list-header article-truncate-2 mb-3 text-break">
+                        <a href="/m/newsflash/Home/Detail/332" class="article-title-link"
+                           hx-get="/m/newsflash/Home/Detail/332"
+                           hx-trigger="click"
+                           hx-target="#outer-wrapper"
+                           hx-swap="innerHTML"
+                           hx-push-url="true"
+                           aria-label="Open Article Law Enforcement Grant - DUI Checkpoint">
+                            Law Enforcement Grant - DUI Checkpoint
+                        </a>
+                </h3>
+                    <div class="article-truncate-3 article-preview mb-3 text-break">
+                            <p class="mb-0"><p><p style="text-align: justify; margin: 0px 0px 1.4em; box-sizing: inherit; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(20, 20, 12); line-height: 1.5;" id="isPasted" fr-original-style="text-align: justify;"><strong fr-original-style="" style="font-weight: 700; box-sizing: inherit;">ALHAMBRA, Calif</strong><span style="box-sizing:border-box;margin:0;padding:0;text-align:left" fr-original-style="box-sizing:border-box;margin:0;padding:0;text-align:left"><strong fr-original-style="" style="font-weight: 700; box-sizing: inherit;">&mdash;&nbsp;</strong></span>On June 27, 2025, the Alhambra Police Department will conduct a Driving Under the Influence (DUI) checkpoint from 7 p.m. to 3 a.m. at an undisclosed location.&nbsp;</p><p style="text-align: justify; margin: 0px 0px 1.4em; box-sizing: inherit; font-family: Arial; font-style: normal; font-weight: 400; color: rgb(20, 20, 12); line-height: 1.5;" fr-original-style="text-align: justify;">DUI checkpoint locations are determined based on data showing incidents of impaired driving-related crashes. The primary purpose of DUI checkpoints is to promote public safety by taking suspected impaired drivers off the road.</p><p fr-original-style="" style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;">&ldquo;Impaired drivers put others on the road at significant risk,&rdquo; Traffic Officer Covarrubias said. &ldquo;Any prevention measures that reduce the number of impaired drivers on our roads significantly improve traffic safety.&rdquo;</p><p fr-original-style="" style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;">Alhambra Police Department reminds the public that impaired driving is not just from alcohol. Some prescription medications and over-the-counter drugs may interfere with driving. While medicinal and recreational marijuana are legal, driving under the influence of marijuana is illegal.</p><p fr-original-style="" style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;">Drivers charged with a first-time DUI face an average of $13,500 in fines and penalties, as well as a suspended license.</p><p fr-original-style="" style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;">Funding for this program was provided by a grant from the <a href="https://www.ots.ca.gov/" target="_blank" rel="noopener" fr-original-style="" style="background-color: initial; transition: color 333ms cubic-bezier(0.45, 0.45, 0.45, 1), background-color 333ms cubic-bezier(0.45, 0.45, 0.45, 1); color: rgb(0, 29, 82); user-select: auto; text-decoration: underline; box-sizing: inherit;">California Office of Traffic Safety</a>, through the <a href="https://www.nhtsa.gov/" target="_blank" rel="noopener" fr-original-style="" style="background-color: initial; transition: color 333ms cubic-bezier(0.45, 0.45, 0.45, 1), background-color 333ms cubic-bezier(0.45, 0.45, 0.45, 1); color: rgb(0, 29, 82); user-select: auto; text-decoration: underline; box-sizing: inherit;">National Highway Traffic Safety Administration</a>.</p><p style="text-align: center; margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;" fr-original-style="text-align: center;">###</p><hr fr-original-style="" style="box-sizing: inherit; height: 1px; background: rgb(176, 192, 208); border: 0px; width: 100%; clear: both; user-select: none; break-after: page;"><p fr-original-style="" style="margin: 0px 0px 1.4em; box-sizing: inherit; font-style: normal; font-weight: 400; font-family: Arial; color: rgb(20, 20, 12); line-height: 1.5;"><strong style="box-sizing: content-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: normal; font-size: 15.2px; font-family: Arial; vertical-align: baseline; color: rgb(20, 20, 12); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" id="isPasted" fr-original-style="box-sizing: content-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-style: normal; font-size: 15.2px; font-family: Arial; vertical-align: baseline; color: rgb(20, 20, 12); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Media Contact</strong><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" fr-original-style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">: Henry Reyes, Sergeant</span><span style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" fr-original-style="color: rgb(20, 20, 12); font-family: Arial; font-size: 15.2px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">626-308-4820, hreyes@alhambrapd.org</span></p></p>
+                    </div>
+            </div>
+            <div id="article-332-cat-9-footer" class="article-list-footer mt-auto">
+                <div class="badge rounded-pill text-dark text-border-primary fw-semibold mw-100 text-truncate">
+                    Police Press Releases
+                </div>
+                <div class="fst-italic text-body-secondary">
+                    Posted on June 25, 2025 | Last Updated on June 26, 2025
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </li>
+
+        </ul>
+
+            <div class="d-flex justify-content-end px-0 pt-4">
+                <a class="btn text-decoration-none btn-show-more" role="button" href="/m/newsflash?cat=9"
+                   hx-trigger="click"
+                   hx-get="/m/newsflash?cat=9"
+                   hx-target="#main-wrapper"
+                   hx-swap="outerHTML"
+                   hx-push-url="true"
+                   hx-on::before-request="document.querySelector('#CategoryId').value=9"
+                >
+                    Show More <span class="visually-hidden">news stories for Police Press Releases</span>
+                </a>
+            </div>
+    </div>
+
+        </main>
+    </div>
+
+    </div>
+    <script src="/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/static/NewsFlash/js/site.js?v=VYS16OR09d_jQJSal2J64Yoagbu2EZxEf4iCWGfchQA"></script>
+    <script src="/static/NewsFlash/js/KAM.js?v=Zzgw2pZvIgJ9NSA1oszaUsBldilcQ1_2y7s8PRJJTYA"></script>
+    <script src="/static/js/common.js?v=tnuMp0NkH8YUlB55ne8czcLUu3iYGYHjnuOyVAgA6Uw"></script>
+    <script src="/static/js/loader.js?v=i215fmhn1ppNi3l5y5xz6tGyeuBsqLV8coS6Mfb4FrU"></script>
+    <script src="/common/modules/LiveEdit.js" type="text/javascript"></script>
+    
+
+</div>
+</div><aside data-cprole="contentContainer" id="featureColumn" class="secondaryContent">	<div id="cc93855484-583f-4aa9-89ca-5e993ed490d8" data-containerid="93855484-583f-4aa9-89ca-5e993ed490d8" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div>
+</div></div>
+</div><!-- GBs --><div data-cprole="structuralContainer" id="gbsContainerTS">
+<div class="siteWrap4"><div data-cprole="contentContainer" id="gbsTS">	<div id="cc48c99239-df63-4815-82b8-2220cdcdc0b5" data-containerid="48c99239-df63-4815-82b8-2220cdcdc0b5" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="61">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="60218803-9980-4f9a-841d-27bfadccb935">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id5255daa2-1249-495f-bc21-98807dd76020" style="" data-widgetcontainerid="5255daa2-1249-495f-bc21-98807dd76020">	
+<div data-widget-id="ccbf265c-bd56-4c20-b95d-3a7c58b80192" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgetccbf265c-bd56-4c20-b95d-3a7c58b80192" class="widget widgetGraphicLinks skin68 widgetOptionSet4 wide" data-elementqueryclasses='{"wide-narrow":"min-width:61em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid3 "> 	
+				<nav class="widgetGraphicLinksNav" aria-label="Graphic links">
+					<div class="row   wide"><!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/557/Submit-a-Service-Request" target="_self" class="fancyButton fancyButton463 ">
+		<span>
+			<span><span class="text"><span class="textStyle1">GoAlhambra</span><span style="font-size: 19.2px;"><b><br></b></span><span class="textStyle2">Submit a service request</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton463.fancyButton:link,.fancyButton463.fancyButton:visited, .fancyButton463div.fancyButton{
+	background-color: rgb(0, 29, 82);
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height:85px;
+display:flex;
+overflow:hidden;
+flex-direction:column; 
+border-radius: 5px;
+justify-content:center;
+position:relative;
+z-index:0;
+}
+.fancyButton463::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+z-index:-1;
+width:100px;
+height:100%;
+border-radius:3px;
+bottom:0;
+left:0;
+border-radius: 5px 0px 0px 5px;
+background:#002B7B;
+}
+.fancyButton463:is(:hover, :focus, :active)::after{
+width:100%;
+}
+.fancyButton463.fancyButton:hover,.fancyButton463.fancyButton:focus,.fancyButton463.fancyButton:active,.fancyButton463.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton463.fancyButton:link > span,.fancyButton463.fancyButton:visited > span, .fancyButton463div.fancyButton > span{
+}
+.fancyButton463.fancyButton:hover > span,.fancyButton463.fancyButton:focus > span,.fancyButton463.fancyButton:active > span,.fancyButton463.fancyButton.hover > span{
+}
+.fancyButton463.fancyButton .text{
+	text-align: left;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	background-image: url('/ImageRepository/Document?documentID=6334');
+	background-repeat: no-repeat;
+	background-position: 30px  center;
+position:relative; 
+line-height:1.2;
+}
+.fancyButton463 .text::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+width:4px;
+height:40px;
+border-radius:3px;
+bottom:50%;
+left:98px;
+transform:translateY(50%);
+background:#DBB13B;
+}
+.fancyButton463:hover .text::after,
+.fancyButton463:focus .text::after,
+.fancyButton463:active .text::after{
+
+}
+.fancyButton463.fancyButton:hover .text,.fancyButton463.fancyButton:focus .text,.fancyButton463.fancyButton:active .text,.fancyButton463.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 30px  center;
+
+
+}
+.fancyButton463.fancyButton .textStyle1{
+	color: rgb(240, 243, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton463.fancyButton:hover .textStyle1, .fancyButton463.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton463.fancyButton .textStyle2{
+	color: rgb(240, 243, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton463.fancyButton:hover .textStyle2, .fancyButton463.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+</style>
+
+ </li><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/450/Pay" target="_self" class="fancyButton fancyButton464 ">
+		<span>
+			<span><span class="text"><span class="textStyle1">Online Payments</span><span style="font-size: 19.2px;"><b><br></b></span><span class="textStyle2">Pay utility bills</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton464.fancyButton:link,.fancyButton464.fancyButton:visited, .fancyButton464div.fancyButton{
+	background-color: rgb(0, 29, 82);
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height:85px; 
+overflow:hidden;
+display:flex;
+flex-direction:column; 
+border-radius: 5px;
+justify-content:center;
+position:relative;
+z-index:0;
+}
+.fancyButton464::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+z-index:-1;
+width:100px;
+height:100%;
+border-radius:3px;
+bottom:0;
+left:0;
+border-radius: 5px 0px 0px 5px;
+background:#002B7B;
+}
+.fancyButton464:is(:hover, :focus, :active)::after{
+width:100%;
+}
+.fancyButton464.fancyButton:hover,.fancyButton464.fancyButton:focus,.fancyButton464.fancyButton:active,.fancyButton464.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton464.fancyButton:link > span,.fancyButton464.fancyButton:visited > span, .fancyButton464div.fancyButton > span{
+}
+.fancyButton464.fancyButton:hover > span,.fancyButton464.fancyButton:focus > span,.fancyButton464.fancyButton:active > span,.fancyButton464.fancyButton.hover > span{
+}
+.fancyButton464.fancyButton .text{
+	text-align: left;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	background-image: url('/ImageRepository/Document?documentID=6337');
+	background-repeat: no-repeat;
+	background-position: 30px  center;
+position:relative; 
+line-height:1.2;
+}
+.fancyButton464 .text::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+width:4px;
+height:40px;
+border-radius:3px;
+bottom:50%;
+left:98px;
+transform:translateY(50%);
+background:#DBB13B;
+}
+.fancyButton464:hover .text::after,
+.fancyButton464:focus .text::after,
+.fancyButton464:active .text::after{
+
+}
+.fancyButton464.fancyButton:hover .text,.fancyButton464.fancyButton:focus .text,.fancyButton464.fancyButton:active .text,.fancyButton464.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 30px  center;
+
+
+}
+.fancyButton464.fancyButton .textStyle1{
+	color: rgb(240, 243, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton464.fancyButton:hover .textStyle1, .fancyButton464.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton464.fancyButton .textStyle2{
+	color: rgb(240, 243, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton464.fancyButton:hover .textStyle2, .fancyButton464.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/404/Transportation" target="_self" class="fancyButton fancyButton465 ">
+		<span>
+			<span><span class="text"><span class="textStyle1">Parking Permits</span><span style="font-size: 19.2px;"><b><br></b></span><span class="textStyle2">Application Information</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton465.fancyButton:link,.fancyButton465.fancyButton:visited, .fancyButton465div.fancyButton{
+	background-color: rgb(0, 29, 82);
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height:85px; 
+overflow:hidden;
+display:flex;
+flex-direction:column; 
+border-radius: 5px;
+justify-content:center;
+position:relative;
+z-index:0;
+}
+.fancyButton465::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+z-index:-1;
+width:100px;
+height:100%;
+border-radius:3px;
+bottom:0;
+left:0;
+border-radius: 5px 0px 0px 5px;
+background:#002B7B;
+}
+.fancyButton465:is(:hover, :focus, :active)::after{
+width:100%;
+}
+.fancyButton465.fancyButton:hover,.fancyButton465.fancyButton:focus,.fancyButton465.fancyButton:active,.fancyButton465.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton465.fancyButton:link > span,.fancyButton465.fancyButton:visited > span, .fancyButton465div.fancyButton > span{
+}
+.fancyButton465.fancyButton:hover > span,.fancyButton465.fancyButton:focus > span,.fancyButton465.fancyButton:active > span,.fancyButton465.fancyButton.hover > span{
+}
+.fancyButton465.fancyButton .text{
+	text-align: left;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	background-image: url('/ImageRepository/Document?documentID=6338');
+	background-repeat: no-repeat;
+	background-position: 30px  center;
+position:relative; 
+line-height:1.2;
+}
+.fancyButton465 .text::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+width:4px;
+height:40px;
+border-radius:3px;
+bottom:50%;
+left:98px;
+transform:translateY(50%);
+background:#DBB13B;
+}
+.fancyButton465:hover .text::after,
+.fancyButton465:focus .text::after,
+.fancyButton465:active .text::after{
+
+}
+.fancyButton465.fancyButton:hover .text,.fancyButton465.fancyButton:focus .text,.fancyButton465.fancyButton:active .text,.fancyButton465.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 30px  center;
+
+
+}
+.fancyButton465.fancyButton .textStyle1{
+	color: rgb(240, 243, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton465.fancyButton:hover .textStyle1, .fancyButton465.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton465.fancyButton .textStyle2{
+	color: rgb(240, 243, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton465.fancyButton:hover .textStyle2, .fancyButton465.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+</style>
+
+ </li><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/430/Applications-Forms-Permits" target="_self" class="fancyButton fancyButton480 ">
+		<span>
+			<span><span class="text"><span class="textStyle1">Online Forms</span><span style="font-size: 19.2px;"><b><br></b></span><span class="textStyle2">Complete necessary documents</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton480.fancyButton:link,.fancyButton480.fancyButton:visited, .fancyButton480div.fancyButton{
+	background-color: rgb(0, 29, 82);
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height:85px;
+display:flex;
+overflow:hidden;
+flex-direction:column; 
+border-radius: 5px;
+justify-content:center;
+position:relative;
+z-index:0;
+}
+.fancyButton480::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+z-index:-1;
+width:100px;
+height:100%;
+border-radius:3px;
+bottom:0;
+left:0;
+border-radius: 5px 0px 0px 5px;
+background:#002B7B;
+}
+.fancyButton480:is(:hover, :focus, :active)::after{
+width:100%;
+}
+.fancyButton480.fancyButton:hover,.fancyButton480.fancyButton:focus,.fancyButton480.fancyButton:active,.fancyButton480.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton480.fancyButton:link > span,.fancyButton480.fancyButton:visited > span, .fancyButton480div.fancyButton > span{
+}
+.fancyButton480.fancyButton:hover > span,.fancyButton480.fancyButton:focus > span,.fancyButton480.fancyButton:active > span,.fancyButton480.fancyButton.hover > span{
+}
+.fancyButton480.fancyButton .text{
+	text-align: left;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	background-image: url('/ImageRepository/Document?documentID=6336');
+	background-repeat: no-repeat;
+	background-position: 34px  center;
+position:relative; 
+line-height:1.2;
+}
+.fancyButton480 .text::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+width:4px;
+height:40px;
+border-radius:3px;
+bottom:50%;
+left:98px;
+transform:translateY(50%);
+background:#DBB13B;
+}
+.fancyButton480:hover .text::after,
+.fancyButton480:focus .text::after,
+.fancyButton480:active .text::after{
+
+}
+.fancyButton480.fancyButton:hover .text,.fancyButton480.fancyButton:focus .text,.fancyButton480.fancyButton:active .text,.fancyButton480.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 34px  center;
+
+
+}
+.fancyButton480.fancyButton .textStyle1{
+	color: rgb(240, 243, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton480.fancyButton:hover .textStyle1, .fancyButton480.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton480.fancyButton .textStyle2{
+	color: rgb(240, 243, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton480.fancyButton:hover .textStyle2, .fancyButton480.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/294/Parks-Recreation" target="_self" class="fancyButton fancyButton466 ">
+		<span>
+			<span><span class="text"><span class="textStyle1">Recreation</span><span style="font-size: 19.2px;"><b><br></b></span><span class="textStyle2">Classes, camps, &amp; more</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton466.fancyButton:link,.fancyButton466.fancyButton:visited, .fancyButton466div.fancyButton{
+	background-color: rgb(0, 29, 82);
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height:85px; 
+overflow:hidden;
+display:flex;
+flex-direction:column; 
+border-radius: 5px;
+justify-content:center;
+position:relative;
+z-index:0;
+}
+.fancyButton466::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+z-index:-1;
+width:100px;
+height:100%;
+border-radius:3px;
+bottom:0;
+left:0;
+border-radius: 5px 0px 0px 5px;
+background:#002B7B;
+}
+.fancyButton466:is(:hover, :focus, :active)::after{
+width:100%;
+}
+.fancyButton466.fancyButton:hover,.fancyButton466.fancyButton:focus,.fancyButton466.fancyButton:active,.fancyButton466.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton466.fancyButton:link > span,.fancyButton466.fancyButton:visited > span, .fancyButton466div.fancyButton > span{
+}
+.fancyButton466.fancyButton:hover > span,.fancyButton466.fancyButton:focus > span,.fancyButton466.fancyButton:active > span,.fancyButton466.fancyButton.hover > span{
+}
+.fancyButton466.fancyButton .text{
+	text-align: left;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	background-image: url('/ImageRepository/Document?documentID=6339');
+	background-repeat: no-repeat;
+	background-position: 34px  center;
+position:relative; 
+line-height:1.2;
+}
+.fancyButton466 .text::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+width:4px;
+height:40px;
+border-radius:3px;
+bottom:50%;
+left:98px;
+transform:translateY(50%);
+background:#DBB13B;
+}
+.fancyButton466:hover .text::after,
+.fancyButton466:focus .text::after,
+.fancyButton466:active .text::after{
+
+}
+.fancyButton466.fancyButton:hover .text,.fancyButton466.fancyButton:focus .text,.fancyButton466.fancyButton:active .text,.fancyButton466.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 34px  center;
+
+
+}
+.fancyButton466.fancyButton .textStyle1{
+	color: rgb(240, 243, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton466.fancyButton:hover .textStyle1, .fancyButton466.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton466.fancyButton .textStyle2{
+	color: rgb(240, 243, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton466.fancyButton:hover .textStyle2, .fancyButton466.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+</style>
+
+ </li><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/agendacenter" target="_self" class="fancyButton fancyButton467 ">
+		<span>
+			<span><span class="text"><span class="textStyle1">Meeting Agendas</span><span style="font-size: 19.2px;"><b><br></b></span><span class="textStyle2">Follow city board meetings</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton467.fancyButton:link,.fancyButton467.fancyButton:visited, .fancyButton467div.fancyButton{
+	background-color: rgb(0, 29, 82);
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height:85px; 
+overflow:hidden;
+display:flex;
+flex-direction:column; 
+border-radius: 5px;
+justify-content:center;
+position:relative;
+z-index:0;
+}
+.fancyButton467::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+z-index:-1;
+width:100px;
+height:100%;
+border-radius:3px;
+bottom:0;
+left:0;
+border-radius: 5px 0px 0px 5px;
+background:#002B7B;
+}
+.fancyButton467:is(:hover, :focus, :active)::after{
+width:100%;
+}
+.fancyButton467.fancyButton:hover,.fancyButton467.fancyButton:focus,.fancyButton467.fancyButton:active,.fancyButton467.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton467.fancyButton:link > span,.fancyButton467.fancyButton:visited > span, .fancyButton467div.fancyButton > span{
+}
+.fancyButton467.fancyButton:hover > span,.fancyButton467.fancyButton:focus > span,.fancyButton467.fancyButton:active > span,.fancyButton467.fancyButton.hover > span{
+}
+.fancyButton467.fancyButton .text{
+	text-align: left;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-right: .5em;
+	padding-left: 130px;
+	background-image: url('/ImageRepository/Document?documentID=6335');
+	background-repeat: no-repeat;
+	background-position: 34px  center;
+position:relative; 
+line-height:1.2;
+}
+.fancyButton467 .text::after{ 
+position:absolute;
+transition:all .3s ease-in-out;
+content:"";
+width:4px;
+height:40px;
+border-radius:3px;
+bottom:50%;
+left:98px;
+transform:translateY(50%);
+background:#DBB13B;
+}
+.fancyButton467:hover .text::after,
+.fancyButton467:focus .text::after,
+.fancyButton467:active .text::after{
+
+}
+.fancyButton467.fancyButton:hover .text,.fancyButton467.fancyButton:focus .text,.fancyButton467.fancyButton:active .text,.fancyButton467.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 34px  center;
+
+
+}
+.fancyButton467.fancyButton .textStyle1{
+	color: rgb(240, 243, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton467.fancyButton:hover .textStyle1, .fancyButton467.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton467.fancyButton .textStyle2{
+	color: rgb(240, 243, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton467.fancyButton:hover .textStyle2, .fancyButton467.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--					--></div>
+				</nav>
+	</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div><!-- Calendar/Carousel --><!-- <div data-cpRole="structuralContainer" id="homeContainer1">
+    <div class="siteWrap4">
+      <div data-cpRole="contentContainer" id="homeContent1a"></div>
+    </div>
+  </div> --><!-- Footer --><footer data-cprole="structuralContainer" id="footerContainerTS">
+<div class="siteWrap4"><div data-cprole="contentContainer" id="footerTS">	<div id="cc4b354406-c079-4381-a45b-b30977574920" data-containerid="4b354406-c079-4381-a45b-b30977574920" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="71">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col5 first" style="" data-widgetcontainerid="a4207e45-6655-4d93-bbcb-efd4f198fe68">				
+	<div class="row nest first wide">
+	
+	<div class="inner col col5 first last id52f05b38-37d5-4113-bb9f-24308886c349" style="" data-widgetcontainerid="52f05b38-37d5-4113-bb9f-24308886c349">	
+    <div data-widget-id="d881b32a-9fcd-487a-a35e-77d4841eb245" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdvd881b32a-9fcd-487a-a35e-77d4841eb245" class="widget widgetInfoAdvanced skin65 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Info Advanced">
+			<header class="widgetHeader" id="headerd881b32a-9fcd-487a-a35e-77d4841eb245">
+		<div class="">
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><a href="/"><img src="/ImageRepository/Document?documentId=6344" class="fr-dib" alt="Alhambra California Homepage"></a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvd881b32a-9fcd-487a-a35e-77d4841eb245 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+	<div class="row nest last wide">
+	
+	<div class="inner col col5 first last id77a6f275-e68c-4cd5-a33e-3e111e684d49" style="" data-widgetcontainerid="77a6f275-e68c-4cd5-a33e-3e111e684d49">	
+<div data-widget-id="85873a8f-eaa3-4983-bd93-3a83991295dc" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget85873a8f-eaa3-4983-bd93-3a83991295dc" class="widget widgetGraphicLinks skin70 widgetOptionSet27 wide" data-elementqueryclasses='{"wide-narrow":"min-width:1em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid4 "> 	
+				<nav class="widgetGraphicLinksNav" aria-label="Graphic links">
+					<div class="row autoWidths center wide"><!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="/facebook" target="_self" aria-label="Facebook graphic"><img src="/ImageRepository/Document?documentID=6340" class="graphicButtonLink" alt="Facebook" onmouseover="this.src='/ImageRepository/Document?documentID=6340'" onmouseout="this.src='/ImageRepository/Document?documentID=6340'" onfocus="this.src='/ImageRepository/Document?documentID=6340'" onblur="this.src='/ImageRepository/Document?documentID=6340'"> </a></li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://www.youtube.com/user/CityofAlhambra" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self" aria-label="YouTube graphic"><img src="/ImageRepository/Document?documentID=6343" class="graphicButtonLink" alt="YouTube" onmouseover="this.src='/ImageRepository/Document?documentID=6343'" onmouseout="this.src='/ImageRepository/Document?documentID=6343'" onfocus="this.src='/ImageRepository/Document?documentID=6343'" onblur="this.src='/ImageRepository/Document?documentID=6343'"> </a></li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://www.linkedin.com/company/cityofalhambra" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self" aria-label="Linkedin graphic"><img src="/ImageRepository/Document?documentID=6341" class="graphicButtonLink" alt="Linkedin" onmouseover="this.src='/ImageRepository/Document?documentID=6341'" onmouseout="this.src='/ImageRepository/Document?documentID=6341'" onfocus="this.src='/ImageRepository/Document?documentID=6341'" onblur="this.src='/ImageRepository/Document?documentID=6341'"> </a></li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="/X" target="_self" aria-label="X graphic"><img src="/ImageRepository/Document?documentID=6342" class="graphicButtonLink" alt="X" onmouseover="this.src='/ImageRepository/Document?documentID=6342'" onmouseout="this.src='/ImageRepository/Document?documentID=6342'" onfocus="this.src='/ImageRepository/Document?documentID=6342'" onblur="this.src='/ImageRepository/Document?documentID=6342'"> </a></li><!--
+--></ul></div><!--					--></div>
+				</nav>
+	</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="b1a93b4a-eb9a-49e8-a8a7-726ba1c93050">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last idfe96ce60-4902-449e-9c77-f63b521120b1" style="" data-widgetcontainerid="fe96ce60-4902-449e-9c77-f63b521120b1">	
+
+<div class="widget widgetSpacer" id="142ec780-4d22-4d70-9321-caa1b561a1b1"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col9" style="" data-widgetcontainerid="447bfcaf-cc02-43c4-8802-687d5da1817d">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col9 first last idcc7fc291-b5b3-4bb9-a2f2-8b375872f382" style="" data-widgetcontainerid="cc7fc291-b5b3-4bb9-a2f2-8b375872f382">	
+    <div data-widget-id="9140390e-2c9e-4704-9884-0746ec8f8b89" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv9140390e-2c9e-4704-9884-0746ec8f8b89" class="widget widgetInfoAdvanced skin67 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="header9140390e-2c9e-4704-9884-0746ec8f8b89">
+			<header class="widgetHeader" id="header9140390e-2c9e-4704-9884-0746ec8f8b89">
+		<div class="">
+					<h3>Contact Info</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid2 ">
+		<div class="row  wide">
+					<div class="col col1 first ">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>City of Alhambra</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>111 South First Street</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>Alhambra, CA 91801</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>Phone: <a href="tel:6265705007">626-570-5007</a></p>
+</li>						</ol>
+					</div>
+					<div class="col col1  last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>City Hall Hours:</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>Monday through Thursday</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>7 am to 5:30 pm</p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv9140390e-2c9e-4704-9884-0746ec8f8b89 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="46bedb36-62f2-42c7-a431-75bd894ad293">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last idc89c868f-2daa-4a51-8d73-bce7b9cfa336" style="" data-widgetcontainerid="c89c868f-2daa-4a51-8d73-bce7b9cfa336">	
+
+<div class="widget widgetSpacer" id="bd0c8c87-6540-4036-b701-56dd8a76a4a0"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8 last" style="" data-widgetcontainerid="68b64a0f-682d-47ae-bcd3-15c03940aeec">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last idd02537b8-9e96-45c2-b0b7-54786b276ec3" style="" data-widgetcontainerid="d02537b8-9e96-45c2-b0b7-54786b276ec3">	
+	<div data-widget-id="7975e2c0-4c4a-4a3f-b4c8-330bd3536afe" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklink7975e2c0-4c4a-4a3f-b4c8-330bd3536afe" class="widget widgetQuickLinks skin67 widgetOptionSet39 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeader7975e2c0-4c4a-4a3f-b4c8-330bd3536afe">
+			<header class="widgetHeader" id="quickLinksHeader7975e2c0-4c4a-4a3f-b4c8-330bd3536afe">
+		<div class="">
+					<h3><a style="" href="/QuickLinks.aspx?CID=16">Helpful Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid2 ">
+        <div class="row  narrow">
+				<div class="col col1 first ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://codelibrary.amlegal.com/codes/alhambra/latest/overview" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self">Alhambra Municipal Code</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/list.aspx" target="_self">Notify Me</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/179/Parking-Citations" target="_self">Pay or Contest Parking Ticket</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/directory.aspx" target="_self">Staff Directory</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.alhambraca.gov/557/Submit-a-Service-Request" target="_blank" aria-label="Submit Service Request opens in new window">Submit Service Request</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://secure.coplogic.com/dors/startreport/300004867" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self">Submit Online Police Report</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="9c6e9671-beca-4f81-8206-154a98a967e3">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id34ed2231-0dcc-4f62-89bb-6f501a4524ec" style="" data-widgetcontainerid="34ed2231-0dcc-4f62-89bb-6f501a4524ec">	
+
+<div class="widget widgetSpacer" id="d0e71487-c6fd-470a-98c2-ba2db48a2323"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="596c77f0-5b1a-4ed4-a0ee-6353baf17b78">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last idd130f83a-6f29-4160-82c2-c4f0288e143b" style="" data-widgetcontainerid="d130f83a-6f29-4160-82c2-c4f0288e143b">	
+
+<div class="widget widgetSpacer" id="4092b035-7d8e-4c0e-9c62-8aa29de35d14"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="673c2241-afe1-476e-a761-14795680cd4b">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last iddd3efee9-0707-4348-af0a-b16419273218" style="" data-widgetcontainerid="dd3efee9-0707-4348-af0a-b16419273218">	
+	<div data-widget-id="2c2289e2-1de1-4701-b87b-ae87b2e11eba" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklink2c2289e2-1de1-4701-b87b-ae87b2e11eba" class="widget widgetQuickLinks skin71 widgetOptionSet52 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Quick Links">
+			<header class="widgetHeader" id="quickLinksHeader2c2289e2-1de1-4701-b87b-ae87b2e11eba">
+		<div class="">
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid5 ">
+        <div class="row autoWidths left narrow">
+				<div class="col col1 first ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://codelibrary.amlegal.com/codes/alhambra/latest/overview" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self">Alhambra Municipal Code</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/list.aspx" target="_self">Notify Me</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/179/Parking-Citations" target="_self">Pay or Contest Parking Ticket</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/directory.aspx" target="_self">Staff Directory</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.alhambraca.gov/557/Submit-a-Service-Request" target="_blank" aria-label="Submit Service Request opens in new window">Submit Service Request</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</footer><!-- Powered By --><div data-cprole="structuralContainer" id="poweredByContainerTS">
+<div class="siteWrap4"><div data-cprole="contentContainer" id="poweredByTS">	<div id="cc3aaa7ec8-af8a-41ac-9161-ed025519c69c" data-containerid="3aaa7ec8-af8a-41ac-9161-ed025519c69c" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col16 first" style="" data-widgetcontainerid="3c32e674-e107-43c2-911c-52958f4a71d1">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col16 first last id4b240dc9-8e81-4ad3-8edb-9e0af12a3357" style="" data-widgetcontainerid="4b240dc9-8e81-4ad3-8edb-9e0af12a3357">	
+	<div data-widget-id="e2696c67-0a0f-4cbc-8b89-f6f69c05a5ed" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklinke2696c67-0a0f-4cbc-8b89-f6f69c05a5ed" class="widget widgetQuickLinks skin71 widgetOptionSet52 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Quick Links">
+			<header class="widgetHeader" id="quickLinksHeadere2696c67-0a0f-4cbc-8b89-f6f69c05a5ed">
+		<div class="">
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid5 ">
+        <div class="row autoWidths left narrow">
+				<div class="col col1 first ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://codelibrary.amlegal.com/codes/alhambra/latest/overview" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self">Alhambra Municipal Code</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/list.aspx" target="_self">Notify Me</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/179/Parking-Citations" target="_self">Pay or Contest Parking Ticket</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/directory.aspx" target="_self">Staff Directory</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://www.alhambraca.gov/557/Submit-a-Service-Request" target="_blank" aria-label="Submit Service Request opens in new window">Submit Service Request</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8 last" style="" data-widgetcontainerid="2f4ab994-a5b5-429f-8589-c83d7be5f4ff">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last idd79cb024-f4a4-47ea-8c72-da56fb635556" style="" data-widgetcontainerid="d79cb024-f4a4-47ea-8c72-da56fb635556">	
+ 
+	<div data-widget-id='0c4704e9-60ca-4ab1-a0ef-127a675b73d6' data-modulename="customHtml" id='widgetCustomHtml0c4704e9-60ca-4ab1-a0ef-127a675b73d6' class="widget widgetCustomHtml skin72 narrow">
+	<div class="widgetBody pageStyles" id="widgetBody0c4704e9-60ca-4ab1-a0ef-127a675b73d6">
+		<div id="customHtml0c4704e9-60ca-4ab1-a0ef-127a675b73d6"><div><style>
+  /* CP icon */
+  .cpBylineIconTS {
+    
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="widgetItem cpBylineTS">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" class="cpBylineIconTS">
+    <path class="c" d="M73.4,23.2h-19v16.7h19c2.8,0,5,2.2,5,5c0,2.8-2.2,5-5,5h-19v28.4h5.5l11.3-11.7h2.2c11.9,0,21.6-9.7,21.6-21.6C95,33,85.3,23.2,73.4,23.2"></path>
+    <path class="p" d="M45.8,66.5H26.6C14.7,66.5,5,56.8,5,44.9C5,33,14.7,23.2,26.6,23.2h19.1v16.7H26.6c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5h19.1V66.5z"></path>
+  </svg>
+  <span class="cpBylineTextTS">Government Websites by <a href="https://connect.civicplus.com/referral" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);">CivicPlus&reg;</a></span>
+</div>
+</div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+
+<link href="/745732998.css" rel="stylesheet" type="text/css">
+
+<div tabindex="0"></div>
+<div id="SplashMessageWrapper" class="cp-Splash-wrapper">
+	<div role="dialog" aria-labelledby="cp-Splash-title" aria-describedby="editorContentDesc" aria-modal="true" tabindex="-1" id="SplashMessage" class="hidden cp-Splash cp-Splash--modal is-open">
+		<div class="cp-Splash-header">
+			<span class="cp-Splash-title" id="cp-Splash-title">Loading</span>
+			<button class="cp-Splash-Btn cp-Splash-close" aria-label="Close this modal" title="Close this window">
+				<svg id="iconClose" viewbox="0 0 25 25">
+					<polygon style="fill:currentcolor" points="18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508"></polygon>
+				</svg>
+			</button>
+		</div>
+		<div class="cp-Splash-body">
+			<div class="cp-Splash-Prose editorContent fr-view" id="editorContentDesc">
+				<!-- Content from the Froala Editor will go here. -->
+				Loading
+			</div>
+		</div>
+		<div class="cp-Splash-footer">
+			<button class="cp-Splash-Btn cp-Splash-Btn--NoShow">Do Not Show Again</button>
+			<button class="cp-Splash-Btn cp-Splash-Btn--Close">Close</button>
+		</div>
+	</div>
+</div>
+<div tabindex="0"></div>
+
+<script src="/Assets/Scripts/APIClient.js"></script>
+<script src="/Assets/Mystique/Shared/Scripts/Moment/Moment.min.js"></script>
+<script src="/Assets/Scripts/SplashModal/SplashModalRender.js"></script>
+<script>
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+</script>
+
+	
+	
+
+    
+
+
+	
+
+
+
+
+
+
+    <script src="/1729008743.js" type="text/javascript"></script>
+    <script type='text/javascript'>
+window.__lo_site_id = 313037;
+
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+	</script>
+
+
+
+
+
+<!-- Fixed Nav Adjustment -->
+<script>
+  function getValueTS(elem, attr) {
+    var val = elem.css(attr);
+    if (val === undefined) return undefined;
+    var num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  var bgColorRegexTS = new RegExp("rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)");
+  function isTransparentTS(elem) {
+    var bg = elem.css('background-color');
+    if (typeof bg !== "string") return false;
+    if (bg === "transparent") return true;
+    if (!bg.startsWith('rgba(')) return false;
+    var matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    var alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-rightpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  var anchor = $("#divToolbars");
+  var bodyContainerTS = $("#bodyContainerTS");
+
+  // Outer banner padding (push banner down)
+  var outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  var innerSizingTS = $("#bannerSizingTS");
+
+  var forceUnfixClassTS = "forceUnfixTS";
+
+  var fixedTopTS = $(".fixedTopTS");
+  var fixedBottomTS = $(".fixedBottomTS");
+  var fixedLeftTS = $(".fixedLeftTS");
+  var fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    var attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    var editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      var topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          var anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight());
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        var leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          } else {
+            $(containerTS).css('padding-left', '');
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight);
+        var rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right >= rightBoundingTS.left) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    var topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      var anchorBounding = anchor[0].getBoundingClientRect();
+      var attachBounding = topAttachTS[0].getBoundingClientRect();
+      var scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    }, 350);
+
+    $(window).scroll(function () {
+      try {
+        scrollAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        try {
+          resizeAdjustmentTS();
+        } catch (e) {
+          console.error(e);
+        }
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+</script>
+<!-- End Fixed Nav Adjustment -->
+
+
+
+
+<!-- Move banner to outer wrap -->
+<script>
+  function moveBannerToOuterWrap() {
+    if ($(".fixedBannerTS #bannerDivbanner2").length) {
+      $(".fixedBannerTS #bannerDivbanner2").appendTo("#outer-wrap");
+    } else {
+      setTimeout(function () {
+        moveBannerToOuterWrap();
+      }, 500);
+    }
+  }
+
+  moveBannerToOuterWrap();
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54N9BJX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!----------Google Translate (Mobile & ADA Friendly)--------->
+
+<style>#google-translate-container {padding: 3px 5px 0px 0px;}.goog-te-combo,.goog-te-banner *,.goog-te-ftab *,.goog-te-menu *,.goog-te-menu2 *,.goog-te-balloon * {font-family: arial;font-size: 10pt;background-image: url("https://theme.zdassets.com/theme_assets/958586/bae8aa24db8d43595871692a9d259186f2db3fb4.png");background-position: 3px 4px;background-size: 22px;background-repeat: no-repeat;text-indent: 20px;background-color: #fff;color: #000 !important;}.goog-logo-link {display: none !important;}.goog-te-gadget {color: transparent !important;}.goog-te-gadget .goog-te-combo {margin: 2px 0 !important;border-radius: 15px !important;}.goog-te-combo{border: 1px solid !important;border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;border-radius: 0 !important;height:32px; !important;padding: 0 1px 0 .25rem !important;}
+
+#launcher-wrapper {bottom: 50px !important;}
+
+</style>
+
+<div id="google-translate-container">
+
+<div id="google_translate_element"></div>
+
+</div>
+
+<script>
+
+function googleTranslateElementInit() {
+
+new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+
+// begin accessibility compliance
+
+$('img.goog-te-gadget-icon').attr('alt','Google Translate');
+
+$('div#goog-gt-tt div.logo img').attr('alt','translate');
+
+$('div#goog-gt-tt .original-text').css('text-align','left');
+
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+$('.goog-te-combo').attr('aria-label','google translate languages');
+
+$('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+}
+
+$(function() {
+
+$.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+
+});
+
+</script>
+
+<!--------------End Google Translate-----------------><!-- AudioEye --> <script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash="4f40ee65f34e360745166f126e0eb695";var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script> <!-- End AudioEye -->
+
+
+    <script type="text/javascript">
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    </script>
+
+    <noscript>
+        <style>
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+        
+<div style="display: none;">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+
+		<symbol id="iconArrow--left" viewbox="0 0 25 25">
+			<title>Arrow Left</title>
+			<polygon style="fill:currentcolor" points="18.044,25 19.498,23.545 8.409,12.454 19.408,1.455 17.954,0 5.502,12.452"></polygon>
+		</symbol>
+
+		<symbol id="iconArrow--right" viewbox="0 0 25 25">
+			<title>Arrow Right</title>
+			<polygon style="fill:currentcolor" points="6.957,0 5.502,1.455 16.591,12.546 5.592,23.545 7.047,25 19.498,12.548"></polygon>
+		</symbol>
+
+	</svg>
+</div>
+    <script type="text/javascript">loadCSS('//fonts.googleapis.com/css?family=Crimson+Text:600,600italic,700,700italic,italic,regular|Poppins:100,100italic,200,200italic,300,300italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|');</script>
+    
+
+    <div class="hidden activeWidgetSkinComponentsOnPageJson">[]</div>
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="iconSlideshowArrowLeft" viewbox="0 0 22.68 40">
+                    <title>Slideshow Left Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M20,40a2.67,2.67,0,0,1-1.9-.79L.79,21.9a2.68,2.68,0,0,1,0-3.79L18.1.79a2.68,2.68,0,1,1,3.79,3.79L6.47,20,21.89,35.42A2.68,2.68,0,0,1,20,40Z"></path>
+                    </g>
+                </symbol>
+                <symbol id="iconSlideshowArrowRight" viewbox="0 0 22.68 40">
+                    <title>Slideshow Right Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M2.68,0a2.67,2.67,0,0,1,1.9.79L21.89,18.1a2.68,2.68,0,0,1,0,3.79L4.58,39.21A2.68,2.68,0,0,1,.79,35.42L16.21,20,.79,4.58A2.68,2.68,0,0,1,2.68,0Z"></path>
+                    </g>
+                </symbol>
+            </svg>
+        </div>
+    
+	
+
+    <div id="root-picker-outlet"></div>
+</body>
+</html>
+

@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379"
     QDRANT_URL: str = "http://localhost:6333"
     OPENAI_API_KEY: str = ""
+    TEMPORAL_HOST: str = "localhost:7233"
 
 
 settings = Settings()

@@ -18,8 +18,13 @@ dependencies = [
     "httpx>=0.27.0",
     "playwright>=1.44.0",
     "pdfplumber>=0.11.0",
+    "pytesseract>=0.3.10",
+    "pdf2image>=1.17.0",
     "feedparser>=6.0.11",
+    "beautifulsoup4>=4.12.0",
     "python-dotenv>=1.0.0",
+    "redis>=5.0.0",
+    "temporalio>=1.7.0",
 ]
 
 [project.optional-dependencies]
@@ -34,3 +39,6 @@ packages = ["src", "config"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+markers = [
+    "integration: marks tests that hit real external APIs (deselect with '-k not integration')",
+]

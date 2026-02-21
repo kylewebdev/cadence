@@ -52,6 +52,7 @@ class Agency(Base):
     )
     homepage_url: Mapped[str | None] = mapped_column(String)
     platform_type: Mapped[str | None] = mapped_column(String)
+    crimemapping_agency_id: Mapped[int | None] = mapped_column()
     parser_id: Mapped[str | None] = mapped_column(String)
     scrape_frequency: Mapped[str] = mapped_column(String, default="daily")
     has_activity_data: Mapped[bool | None] = mapped_column()
@@ -83,6 +84,7 @@ class AgencyFeed(Base):
     is_active: Mapped[bool] = mapped_column(default=True)
     last_scraped: Mapped[datetime | None] = mapped_column()
     last_successful: Mapped[datetime | None] = mapped_column()
+    last_error: Mapped[str | None] = mapped_column(Text)
     notes: Mapped[str | None] = mapped_column(Text)
 
     agency: Mapped["Agency"] = relationship(back_populates="feeds")
