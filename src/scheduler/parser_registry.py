@@ -10,10 +10,12 @@ from src.parsers.platform_rss import RSSParser
 from src.parsers.platform_socrata import SocrataParser
 from src.registry.models import Agency
 
-PLATFORM_PARSERS: dict[str, Callable[["Agency"], BaseParser]] = {
+PLATFORM_PARSERS: dict[str, Callable[["Agency"], BaseParser | None]] = {
     "rss": lambda a: RSSParser(a.agency_id),
-    "crimemapping": lambda a: CrimeMappingParser(
-        a.agency_id, a.crimemapping_agency_id or 0
+    "crimemapping": lambda a: (
+        CrimeMappingParser(a.agency_id, a.crimemapping_agency_id)
+        if a.crimemapping_agency_id
+        else None
     ),
     "civicplus": lambda a: CivicPlusParser(a.agency_id),
     "nixle": lambda a: NixleParser(a.agency_id),

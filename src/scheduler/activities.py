@@ -66,6 +66,10 @@ async def scrape_agency_activity(agency_id: str) -> dict:
 
         for feed in active_feeds:
             try:
+                if not feed.url.startswith(("http://", "https://")):
+                    logger.debug("Skipping feed with invalid URL %r for agency %s", feed.url, agency_id)
+                    continue
+
                 if await _dedup.url_recently_fetched(feed.url, ttl_hours=int(ttl_hours)):
                     logger.debug("Skipping recently fetched feed %s", feed.url)
                     continue

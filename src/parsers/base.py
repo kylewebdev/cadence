@@ -22,6 +22,11 @@ class RawDocument:
     source_metadata: dict = field(default_factory=dict)
 
 
+# Global semaphore: cap concurrent Playwright browser instances to avoid
+# resource exhaustion when many activities run simultaneously.
+PLAYWRIGHT_SEMAPHORE: asyncio.Semaphore = asyncio.Semaphore(3)
+
+
 class BaseParser(ABC):
     DEFAULT_RATE_LIMIT_SECONDS: float = 1.0
 

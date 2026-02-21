@@ -1,3 +1,4 @@
+import asyncio
 import hashlib
 import logging
 from datetime import datetime, timedelta
@@ -39,23 +40,28 @@ class Deduplicator:
         self._redis: aioredis.Redis | None = None
         self._fallback: _InMemoryFallback | None = None
         self._initialized: bool = False
+        self._lock: asyncio.Lock = asyncio.Lock()
 
     async def _ensure_connected(self) -> None:
         if self._initialized:
             return
-        self._initialized = True
-        try:
-            client = aioredis.Redis.from_url(
-                settings.REDIS_URL, encoding="utf-8", decode_responses=True
-            )
-            await client.ping()
-            self._redis = client
-        except Exception:
-            logger.warning(
-                "Redis unavailable at %s; falling back to in-memory deduplication.",
-                settings.REDIS_URL,
-            )
-            self._fallback = _InMemoryFallback()
+        async with self._lock:
+            # Re-check inside the lock in case another coroutine finished first
+            if self._initialized:
+                return
+            self._initialized = True
+            try:
+                client = aioredis.Redis.from_url(
+                    settings.REDIS_URL, encoding="utf-8", decode_responses=True
+                )
+                await client.ping()
+                self._redis = client
+            except Exception:
+                logger.warning(
+                    "Redis unavailable at %s; falling back to in-memory deduplication.",
+                    settings.REDIS_URL,
+                )
+                self._fallback = _InMemoryFallback()
 
     @staticmethod
     def _compute_hash(doc: RawDocument) -> str:

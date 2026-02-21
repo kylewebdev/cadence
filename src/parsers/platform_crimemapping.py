@@ -18,7 +18,7 @@ from datetime import datetime
 
 from playwright.async_api import async_playwright
 
-from src.parsers.base import BaseParser, RawDocument
+from src.parsers.base import PLAYWRIGHT_SEMAPHORE, BaseParser, RawDocument
 
 
 class CrimeMappingParser(BaseParser):
@@ -30,15 +30,16 @@ class CrimeMappingParser(BaseParser):
     async def fetch(self, url: str) -> list[RawDocument]:
         await self.rate_limit_delay()
         embed_url = f"https://www.crimemapping.com/map/agency/{self.crimemapping_id}"
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            page = await browser.new_page()
-            async with page.expect_response(
-                lambda r: "/cap/agency/" in r.url and r.status == 200
-            ) as response_info:
-                await page.goto(embed_url, wait_until="domcontentloaded")
-            data = await (await response_info.value).json()
-            await browser.close()
+        async with PLAYWRIGHT_SEMAPHORE:
+            async with async_playwright() as p:
+                browser = await p.chromium.launch(headless=True)
+                page = await browser.new_page()
+                async with page.expect_response(
+                    lambda r: "/cap/agency/" in r.url and r.status == 200
+                ) as response_info:
+                    await page.goto(embed_url, wait_until="domcontentloaded")
+                data = await (await response_info.value).json()
+                await browser.close()
         incidents = data.get("Incidents", [])
         if not incidents:
             return []

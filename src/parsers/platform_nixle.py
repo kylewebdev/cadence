@@ -13,7 +13,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-from src.parsers.base import BaseParser, RawDocument
+from src.parsers.base import PLAYWRIGHT_SEMAPHORE, BaseParser, RawDocument
 from src.parsers.platform_rss import RSSParser
 
 USER_AGENT = "CadenceBot/1.0 (+https://github.com/cadence)"
@@ -45,18 +45,19 @@ class NixleParser(BaseParser):
         if _RSS_PATTERN.search(url):
             return await RSSParser(self.agency_id).fetch(url)
 
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            page = await browser.new_page()
-            await page.set_extra_http_headers({"User-Agent": USER_AGENT})
-            await page.goto(url, wait_until="domcontentloaded")
-            try:
-                await page.wait_for_selector(WAIT_SELECTOR, timeout=PLAYWRIGHT_TIMEOUT)
-            except Exception:
-                pass
-            final_url = page.url        # captures post-redirect URL
-            html = await page.content()
-            await browser.close()
+        async with PLAYWRIGHT_SEMAPHORE:
+            async with async_playwright() as p:
+                browser = await p.chromium.launch(headless=True)
+                page = await browser.new_page()
+                await page.set_extra_http_headers({"User-Agent": USER_AGENT})
+                await page.goto(url, wait_until="domcontentloaded")
+                try:
+                    await page.wait_for_selector(WAIT_SELECTOR, timeout=PLAYWRIGHT_TIMEOUT)
+                except Exception:
+                    pass
+                final_url = page.url        # captures post-redirect URL
+                html = await page.content()
+                await browser.close()
         return self._parse_html(html, final_url)
 
     def _parse_html(self, html: str, page_url: str) -> list[RawDocument]:
