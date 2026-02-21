@@ -2,6 +2,7 @@ from collections.abc import Callable
 
 from src.parsers.base import BaseParser
 from src.parsers.platform_arcgis import ArcGISParser
+from src.parsers.platform_citizenrims import CitizenRimsParser
 from src.parsers.platform_civicplus import CivicPlusParser
 from src.parsers.platform_crimemapping import CrimeMappingParser
 from src.parsers.platform_nixle import NixleParser
@@ -17,8 +18,10 @@ PLATFORM_PARSERS: dict[str, Callable[["Agency"], BaseParser | None]] = {
         if a.crimemapping_agency_id
         else None
     ),
+    "citizenrims": lambda a: CitizenRimsParser(a.agency_id),
     "civicplus": lambda a: CivicPlusParser(a.agency_id),
     "nixle": lambda a: NixleParser(a.agency_id),
+    "rave": lambda a: NixleParser(a.agency_id),   # Rave Mobile Safety — same parser
     "socrata": lambda a: SocrataParser(a.agency_id),
     "arcgis": lambda a: ArcGISParser(a.agency_id),
     "pdf": lambda a: PDFParser(a.agency_id),

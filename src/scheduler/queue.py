@@ -23,6 +23,14 @@ def _serialize(doc: RawDocument) -> str:
     return json.dumps(d)
 
 
+def _deserialize(raw: str) -> RawDocument:
+    """Deserialize JSON string back to RawDocument."""
+    d = json.loads(raw)
+    if d.get("published_date"):
+        d["published_date"] = datetime.fromisoformat(d["published_date"])
+    return RawDocument(**d)
+
+
 class ProcessingQueue:
     """
     Redis LPUSH queue for raw documents awaiting Phase 3 processing.
@@ -57,3 +65,17 @@ class ProcessingQueue:
     async def dlq_depth(self) -> int:
         client = await self._client()
         return await client.llen(DLQ_KEY)
+
+    async def pop_all(self) -> list[RawDocument]:
+        """Non-blocking drain: RPOP until queue is empty. Returns all docs."""
+        client = await self._client()
+        docs = []
+        while True:
+            raw = await client.rpop(QUEUE_KEY)
+            if raw is None:
+                break
+            try:
+                docs.append(_deserialize(raw))
+            except Exception:
+                logger.warning("Failed to deserialize queue item; skipping.")
+        return docs

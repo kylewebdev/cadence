@@ -7,6 +7,7 @@ from temporalio import activity
 
 from src.api.deps import AsyncSessionLocal
 from src.dedup.deduplicator import Deduplicator
+from src.parsers.health_monitor import record_parse_run
 from src.registry.models import Agency, AgencyFeed
 from src.scheduler.parser_registry import get_parser
 from src.scheduler.queue import ProcessingQueue
@@ -99,6 +100,17 @@ async def scrape_agency_activity(agency_id: str) -> dict:
 
         await session.commit()
 
+    try:
+        await record_parse_run(
+            agency_id=agency_id,
+            docs_fetched=docs_pushed,
+            feeds_scraped=feeds_scraped,
+            error_count=len(errors),
+            platform_type=agency.platform_type,
+        )
+    except Exception:
+        logger.exception("Failed to record parse run for %s", agency_id)
+    # Return regardless — health recording failure must not mask scrape result
     return {"feeds_scraped": feeds_scraped, "docs_pushed": docs_pushed, "errors": errors}
 
 

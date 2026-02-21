@@ -49,7 +49,6 @@ class Deduplicator:
             # Re-check inside the lock in case another coroutine finished first
             if self._initialized:
                 return
-            self._initialized = True
             try:
                 client = aioredis.Redis.from_url(
                     settings.REDIS_URL, encoding="utf-8", decode_responses=True
@@ -62,6 +61,10 @@ class Deduplicator:
                     settings.REDIS_URL,
                 )
                 self._fallback = _InMemoryFallback()
+            # Set AFTER connection is established — not before the await —
+            # so concurrent coroutines that skip the lock don't see initialized=True
+            # while both _redis and _fallback are still None.
+            self._initialized = True
 
     @staticmethod
     def _compute_hash(doc: RawDocument) -> str:

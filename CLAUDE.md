@@ -1,38 +1,59 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+CA law enforcement intelligence aggregation platform. 697 agencies. Python + FastAPI + Postgres + Redis + Qdrant.
 
-## Project Overview
+## Phase Status
 
-Cadence is a California law enforcement intelligence aggregation platform. It scrapes, normalizes, and semantically searches public-facing data from ~697 CA law enforcement agencies to extract CAD/case numbers, power FOIA requests under CPRA, and detect trends across agencies.
+| Phase | Description | Status |
+|---|---|---|
+| 1 | Source Registry | ✅ Complete — 697 agencies in Postgres, platform_type enriched, FastAPI CRUD live |
+| 2 | Ingestion Pipeline | ✅ Complete — parsers for CivicPlus/CitizenRims/Nixle/ArcGIS/CrimeMapping/Socrata/RSS/PDF, Temporal scheduler, Redis dedup, 204/266 agencies reachable (76.7%) |
+| 3 | Document Processing | 🔄 In Progress |
+| 4 | FOIA Pipeline | ⬜ Not started |
+| 5 | Frontend | ⬜ Not started |
 
-## Architecture (6 Layers)
+## Phase 3 — Document Processing (Active)
 
-### 1. Source Registry (`registry/`)
-Postgres table of all 697 agencies. Key fields: `agency_id`, `canonical_name`, `county`, `region`, `agency_type`, `homepage_url`, `feed_urls` (by content type), `platform_type`, `parser_id`, `scrape_frequency`, `foia_contact`. Source of truth is a CSV of 697 agencies.
+### Build Order
+1. `schema/phase3_tables.sql` — documents, chunks, foia_queue, review_queue tables
+2. `classify_document.py` — rule-based doc type classifier
+3. `clean_document.py` — platform-aware text cleaner
+4. `extract_identifiers.py` — regex CAD/case number library (25+ patterns)
+5. `extract_identifiers_llm.py` — Claude Haiku fallback for press releases
+6. `process_document.py` — orchestrator wiring all steps together
+7. `foia_queue.py` — FOIA queue population and priority scoring
+8. `health_check.py` + `test_phase3_pipeline.py` — monitoring and integration tests
 
-### 2. Ingestion Pipeline (`ingestion/`)
-Task queue (Temporal or n8n) dispatching per-agency scrape jobs. Parsers are modular, keyed by `platform_type`. Major platform families:
-- **CivicPlus** (~100 agencies)
-- **CrimeMapping** (~150+ agencies)
-- **Nixle/Rave** (~60+ agencies)
-- **Socrata/ArcGIS** open data portals
-- PDF-only agencies
-- Custom HTML one-offs
+### Schema Conventions
+- Every document: `doc_id` (UUID4), `agency_id` (FK), `document_type` enum, `published_date` (TIMESTAMPTZ, never null — fallback to `scraped_at`)
+- Every chunk inherits full parent doc metadata — non-negotiable
+- `foia_eligible = true` when `cad_numbers[]` OR `case_numbers[]` is non-empty (Postgres trigger)
+- `parse_quality < 50` → insert into `review_queue`, do not skip
 
-Scraping: Playwright (JS-heavy sites) + httpx (static). PDF: pdfplumber + Tesseract OCR.
+### CAD Extraction Rules
+- Regex first (25+ patterns covering agency-specific formats)
+- LLM fallback only if: regex empty AND `document_type = press_release` AND doc > 100 tokens
+- LLM target: < 10% of total docs. Alert if > 15%
+- LLM model: `claude-haiku-4-5-20251001`
 
-### 3. Document Processing (`processing/`)
-Normalize to common schema, strip boilerplate, extract CAD/case numbers via a regex library (30–50 patterns) with LLM fallback (Claude Haiku). Sets `foia_eligible` flag on documents.
+### Phase 3 → Phase 4 Handoff Signal
+Redis embedding queue receiving `chunk_id`s AND `foia_queue` has entries after first full ingest run.
 
-### 4. Vector Store (`vector/`)
-**Qdrant** as primary vector DB. Every chunk must carry full metadata: `agency_id`, `county`, `region`, `document_type`, `published_date`, `cad_numbers`, `foia_eligible`. Separate Postgres table holds full document records. Embedding model: `text-embedding-3-large`.
+## Critical Invariant
 
-### 5. FOIA Pipeline (`foia/`)
-Queue of `foia_eligible` documents. CPRA request template engine (Jinja2 + LLM fill-in). Status tracking and deadline reminders.
+Every chunk upserted to Qdrant **must** carry: `agency_id`, `published_date`, `document_type`, `cad_numbers`, `foia_eligible`. A chunk without full metadata is invisible to CPRA workflows.
 
-### 6. Frontend (`frontend/`)
-Next.js + Tailwind + shadcn/ui. Features: semantic search with metadata filters, FOIA badge on results, trend dashboard (BERTopic clustering), agency registry management.
+## Key Files
+
+| File | Purpose |
+|---|---|
+| `src/registry/models.py` | Agency, AgencyFeed, ParseRun, Document SQLAlchemy models |
+| `src/parsers/__init__.py` | PARSER_REGISTRY, get_parser(parser_id, agency_id) |
+| `src/parsers/health_monitor.py` | record_parse_run(), get_unhealthy_agencies() |
+| `src/scheduler/activities.py` | Temporal activities |
+| `src/scheduler/parser_registry.py` | get_parser(agency: Agency) — takes Agency object |
+| `src/dedup/deduplicator.py` | Redis dedup with in-memory fallback |
+| `src/api/deps.py` | AsyncSessionLocal |
 
 ## Tech Stack
 
@@ -41,70 +62,9 @@ Next.js + Tailwind + shadcn/ui. Features: semantic search with metadata filters,
 | API | Python, FastAPI |
 | Scraping | Playwright, httpx |
 | PDF | pdfplumber, Tesseract |
-| Queue | Redis + BullMQ (or Temporal/n8n) |
+| Queue | Redis + Temporal |
 | Vector DB | Qdrant |
 | Relational DB | Postgres |
-| Frontend | Next.js, Tailwind, shadcn/ui |
 | Embeddings | OpenAI `text-embedding-3-large` |
-| LLM fallback | Claude Haiku (`claude-haiku-4-5-20251001`) |
-
-## MVP Build Sequence
-
-1. ~~Registry setup — load CSV into Postgres, validate schema~~ ✅ **COMPLETE**
-2. RSS/platform parsers — CivicPlus, CrimeMapping, Nixle first (highest agency coverage)
-3. Embedding pipeline — normalize → embed → upsert to Qdrant with full metadata
-4. FOIA queue — flag eligible docs, render CPRA templates
-5. Frontend — search UI, filters, FOIA badge, trend dashboard
-
-## Phase Status
-
-| Phase | Description | Status |
-|---|---|---|
-| 1 | Source Registry | ✅ Complete |
-| 2 | Ingestion Pipeline | 🔄 In Progress |
-| 3 | Document Processing + Embeddings | ⬜ Not started |
-| 4 | FOIA Pipeline | ⬜ Not started |
-| 5 | Frontend | ⬜ Not started |
-
-### Phase 1 Complete — Source Registry
-
-- 697 agencies loaded into Postgres with `agency_id` slug, `agency_type`, `county`, `region`
-- `platform_type` populated for ~268 agencies via `import_csv.py` + `enrich_platforms.py`
-- Feed records created for all agencies with Activity Data URLs
-- FastAPI CRUD + filter + stats endpoints working (`/api/registry/stats`)
-- Region classification run (`classify_regions.py`); 206/697 agencies have region
-- Scripts: `scripts/import_csv.py`, `scripts/enrich_platforms.py`, `scripts/classify_regions.py`, `scripts/phase1_status.py`
-
-### Phase 2 — Ingestion Pipeline
-
-**Goal:** Build the scraping/ingestion pipeline that fetches, parses, deduplicates, and normalizes documents from all 697 agencies into the Postgres `documents` table and Redis processing queue.
-
-**Parser architecture:**
-- All parsers live in `parsers/` and inherit from `BaseParser` (`parsers/base.py`)
-- Each parser accepts a URL and returns `List[RawDocument]`
-- No CAD extraction, no embedding in this phase — raw fetch + normalize only
-- Parsers are keyed by `platform_type` in the agency registry
-
-**Build order (highest agency coverage first):**
-
-| Step | Component | Target agencies |
-|---|---|---|
-| 1 | RSS parser | Generic fallback |
-| 2 | CrimeMapping parser | ~11 agencies |
-| 3 | CivicPlus parser | ~103 agencies |
-| 4 | Nixle/Rave parser | ~49 agencies |
-| 5 | Socrata/ArcGIS parser | ~28 agencies |
-| 6 | PDF extractor | PDF-only agencies |
-| 7 | Deduplication layer | All parsers |
-| 8 | Temporal scheduler | All agencies |
-| 9 | Parser registry + health monitor | All agencies |
-
-**Exit criteria:** ≥60% agency coverage (≥418/697) with scheduler running and health monitor active.
-
-## Critical Invariant
-
-Every document chunk upserted to Qdrant **must** carry the full metadata payload (`agency_id`, `published_date`, `document_type`, `cad_numbers`, `foia_eligible`). Filtered semantic search correctness depends entirely on this — a chunk without metadata cannot be filtered and is effectively invisible to CPRA workflows.
-
-## CAD/Case Number Extraction
-
-Regex library covers 30–50 patterns (agency-specific formats). When regex yields no match, fall back to Claude Haiku with a structured extraction prompt. The `foia_eligible` flag is set when a valid CAD or case number is present and the document is from a public-facing feed.
+| LLM fallback | Claude Haiku `claude-haiku-4-5-20251001` |
+| Frontend | Next.js, Tailwind, shadcn/ui |
